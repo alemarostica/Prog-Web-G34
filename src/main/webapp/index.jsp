@@ -5,6 +5,7 @@
   <title>JSP - Hello World</title>
 </head>
 <body>
+<jsp:include page="componenti/navBar.jsp"></jsp:include>
 <h1><%= "Hello World!" %></h1>
 <br/>
 <a href="hello-servlet">Hello Servlet</a>
