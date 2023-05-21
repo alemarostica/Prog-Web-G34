@@ -8,5 +8,6 @@
 <h1><%= "Hello World!" %></h1>
 <br/>
 <a href="hello-servlet">Hello Servlet</a>
+<jsp:include page="componenti/frasiMotivazionali.html"></jsp:include>
 </body>
 </html>

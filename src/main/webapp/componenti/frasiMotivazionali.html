@@ -1,0 +1,18 @@
+<fieldset>
+    <legend>Frase Motivazionale</legend>
+    <p id="fraseMotivazionale"></p>
+</fieldset>
+
+<script>
+    let indexFrase = -1;
+    const fetchFrase = ()=>{
+        fetch(`frasiMotivazionali?i=${indexFrase}`)
+        .then(res=>res.json())
+        .then(data=>{
+            indexFrase = data.numero;
+            document.getElementById("fraseMotivazionale").innerText = data.frase;
+        });
+    }
+    fetchFrase();
+    setInterval(fetchFrase, 20000);
+</script>
