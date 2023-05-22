@@ -30,7 +30,7 @@ public class frasiMotivazionali extends HttpServlet {
             }
 
         // Apertura file frasi
-        String filePath = getServletContext().getRealPath("frasiMotivazionali.xml");
+        String filePath = getServletContext().getRealPath("WEB-INF/frasiMotivazionali.xml");
         File fileFrasiMotivazionali = new File(filePath);
         DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
 
