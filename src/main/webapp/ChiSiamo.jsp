@@ -39,6 +39,17 @@
       <img src="./src/main/resources/images/fondatrice.jpg" width="400" height="400"/>
     </td>
   </tr>
+  <tr>
+    <td><h1>I nostri riconoscimenti</h1></td>
+  </tr>
+  <tr>
+    <td>
+      <p style="font-size: 20px"><%= "Abbiamo ottenuto numerosi riconoscimenti per il suo impegno e i risultati raggiunti nel campo dell'azione umanitaria. Grazie alla dedizione e alla passione dei suoi membri e volontari, l'associazione è stata elogiata per l'efficacia delle sue iniziative e per l'impatto positivo che ha avuto sulle comunità in cui opera. È stata insignita di premi e riconoscimenti da parte di organizzazioni internazionali e locali, che hanno apprezzato il suo impegno nel combattere la povertà, promuovere l'istruzione, fornire assistenza sanitaria e proteggere i diritti umani. Questi riconoscimenti sono un testimonianza dell'importante lavoro svolto dall'associazione e motivano ulteriormente il suo impegno nel creare un mondo migliore per tutti.\n"%></p>
+    </td>
+    <td>
+      <img src="./src/main/resources/images/riconoscimenti.jpg" width="600" height="400"/>
+    </td>
+  </tr>
 </table>
 <!-- footer -->
 </body>
