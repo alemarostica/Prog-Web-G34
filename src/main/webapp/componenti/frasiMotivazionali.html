@@ -5,12 +5,29 @@
 
 <script>
     let indexFrase = -1;
+    const sleep = async (t) => {
+        let r;
+        const p = new Promise((res)=>{r=res});
+        setInterval(r,t);
+        await p;
+        return;
+    }
     const fetchFrase = ()=>{
         fetch(`frasiMotivazionali?i=${indexFrase}`)
         .then(res=>res.json())
-        .then(data=>{
+        .then(async data=>{
             indexFrase = data.numero;
-            document.getElementById("fraseMotivazionale").innerText = data.frase;
+
+            const p = document.getElementById("fraseMotivazionale");
+            while (p.innerText.length>0) {
+                p.innerText = p.innerText.slice(0,p.innerText.length-1);
+                await sleep(5);
+            }
+
+            for (let i=0; i<=data.frase.length; i++) {
+                document.getElementById("fraseMotivazionale").innerText = data.frase.slice(0,i);
+                await sleep(5);
+            }
         });
     }
     fetchFrase();
