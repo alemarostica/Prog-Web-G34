@@ -26,6 +26,7 @@
     <img src="./src/main/resources/images/downloadicon.png" width="35" height="35"/>
   </button>
 </div>
+<a href="attivita.jsp">Attività</a> <!-- temporaneo altrimenti strippo a scrivere ogni volta la pagina nella search bar -->
 <!-- footer -->
 </body>
 </html>
