@@ -6,12 +6,12 @@
   <meta charset="UTF-8"/>
 </head>
 <body>
-<jsp:include page="componenti/navBar.jsp"></jsp:include>
+<%@include file="WEB-INF/componenti/navBar.jsp"%>
 <h1><%= "Hello World!" %></h1>
 <br/>
 <a href="<%=response.encodeURL("hello-servlet")%>">Hello Servlet</a>
-<jsp:include page="componenti/frasiMotivazionali.html"></jsp:include>
-<jsp:include page="componenti/cookiePopup.jsp"></jsp:include>
-<%@include file="./componenti/Footer.html"%>
+<%@include file="WEB-INF/componenti/frasiMotivazionali.html"%>
+<%@include file="WEB-INF/componenti/cookiePopup.jsp"%>
+<%@include file="WEB-INF/componenti/Footer.html"%>
 </body>
 </html>

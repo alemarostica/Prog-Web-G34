@@ -35,7 +35,7 @@ public class frasiMotivazionali extends HttpServlet {
         DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
 
         try {
-            // Apertura e parsing del XML
+            // Parsing del XML
             DocumentBuilder db = dbf.newDocumentBuilder();
             Document doc = db.parse(fileFrasiMotivazionali);
             doc.getDocumentElement().normalize();
@@ -48,8 +48,8 @@ public class frasiMotivazionali extends HttpServlet {
             Node nodoFrase = frasi.item(randomIndex);
             String frase = nodoFrase.getTextContent();
 
-            // manda la risposta come JSON
-            response.setContentType("application/json");
+            // manda la risposta come JSON e specifico il charset
+            response.setContentType("application/json; charset=utf-8");
             PrintWriter out = response.getWriter();
             out.print(String.format("{\"frase\": \"%s\", \"numero\": %d}",frase,randomIndex));
             out.flush();

@@ -1,4 +1,5 @@
 <fieldset>
+    <legend>navBar</legend>
     <img class="logo" src="images/logo.png" alt="logo">
     <a href="<%= response.encodeURL("chiSiamo.jsp")%>">Chi Siamo</a>
     <a href="<%= response.encodeURL("attivita.jsp")%>">Attività</a>
