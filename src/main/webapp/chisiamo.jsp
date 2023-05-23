@@ -14,7 +14,7 @@
     background: aliceblue;
     margin: 50px;
 ">
-<!-- navbar -->
+<%@include file="WEB-INF/componenti/navBar.jsp"%>
 <table cellspacing="20">
 <tr>
 <td><h1>La nostra storia</h1></td>
@@ -51,6 +51,6 @@
     </td>
   </tr>
 </table>
-<!-- footer -->
+<%@include file="WEB-INF/componenti/Footer.html"%>
 </body>
 </html>

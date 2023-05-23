@@ -14,6 +14,7 @@
     background: aliceblue;
     margin: 50px;
 ">
+<%@include file="WEB-INF/componenti/navBar.jsp"%>
 <h1>Collaborazione locale</h1>
 <h3>Agire vicino a chi ha bisogno</h3>
 <table cellspacing="20">
@@ -27,5 +28,6 @@
     </tr>
 </table>
 <a href="attivita.jsp">Indietro</a>
+<%@include file="WEB-INF/componenti/Footer.html"%>
 </body>
 </html>

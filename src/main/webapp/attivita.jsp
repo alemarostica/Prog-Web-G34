@@ -14,7 +14,7 @@
     background: aliceblue;
     margin: 50px;
 ">
-<!--navbar -->
+<%@include file="WEB-INF/componenti/navBar.jsp"%>
 <h1>Cosa facciamo?</h1>
 <h2>Agiamo su molti fronti</h2>
 <p style="font-size: 20px"><%="L'associzione umanitaria Tum4World si impegna su numerosi fronti umanitari nei quali raggiunge periodicamente importanti traguardi. Esplora le attività che porta avanti!"%></p>
@@ -47,6 +47,6 @@
     </td>
   </tr>
 </table>
-
+<%@include file="WEB-INF/componenti/Footer.html"%>
 </body>
 </html>
