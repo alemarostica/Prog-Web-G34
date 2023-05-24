@@ -33,6 +33,9 @@
             <option value="altro">Altro</option>
         </select> <br/>
         <textarea id="msg" name="msg" row="10" cols="70" placeholder="Scrivi qui il tuo messaggio..."></textarea>
+        <br/>
+        <button> Annulla</button>
+        <button> Invia</button>
     </form>
 </div>
 </div>
