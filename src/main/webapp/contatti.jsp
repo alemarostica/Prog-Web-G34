@@ -22,9 +22,9 @@
 <div style="width: 50%; float: right;">
     <h1>Lasciaci un messaggio, ti ricontatteremo il più presto possibile</h1>
     <form>
-        <label>Nome</label><input type="text">
-        <label>Cognome</label><input type="text"><br/>
-        <label>e-mail</label><input type="email"><br/>
+        <label>Nome</label><input type="text" id="nome">
+        <label>Cognome</label><input type="text" id="cognome"><br/>
+        <label>e-mail</label><input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" id="email"><br/>
         <label>Per quale motivo ci stai contattando?</label>
         <select name="motivo" id="motivo">
             <option value="consiglio">Darvi un consiglio</option>
@@ -34,8 +34,8 @@
         </select> <br/>
         <textarea id="msg" name="msg" row="10" cols="70" placeholder="Scrivi qui il tuo messaggio..."></textarea>
         <br/>
-        <button> Annulla</button>
-        <button> Invia</button>
+        <input type="reset" />
+        <input type="submit" />
     </form>
 </div>
 </div>
