@@ -28,7 +28,7 @@
         </td>
     </tr>
 </table>
-<a href="attivita.jsp">Indietro</a>
+<a href=<%=response.encodeURL("attivita.jsp")%>>Indietro</a>
 <%@include file="WEB-INF/componenti/Footer.html"%>
 </body>
 </html>
