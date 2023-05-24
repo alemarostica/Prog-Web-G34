@@ -7,6 +7,7 @@
     let indexFrase = -1;
     const sleep = async (t) => {
         let r;
+        // questa promise viene usata solo per motivi estetici nella scrittura letta della frase.
         const p = new Promise((res)=>{r=res});
         setInterval(r,t);
         await p;
@@ -15,26 +16,29 @@
     const fetchFrase = ()=>{
         // Il credentials omit è importante per impedire al fetch di settare cookie di sessione.
         // Se non viene messo c'è il pericolo che il server setti il JSESSIONID anche se il client ha premuto "rifiuta cookies"
-        fetch(`frasiMotivazionali?i=${indexFrase}`, {
-            credentials: "omit"
-        })
-        .then(res=>res.json())
-        .then(async data=>{
-            indexFrase = data.numero;
+        const xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = async function () {
+            if (this.readyState == 4 && this.status == 200) {
+                const data = JSON.parse(this.responseText);
 
-            const p = document.getElementById("fraseMotivazionale");
-            // cancella lentamente la frase vecchia
-            while (p.innerText.length>0) {
-                p.innerText = p.innerText.slice(0,p.innerText.length-1);
-                await sleep(5);
-            }
+                indexFrase = data.numero;
 
-            // scrive lentamente la frase corrente
-            for (let i=0; i<=data.frase.length; i++) {
-                p.innerText = data.frase.slice(0,i);
-                await sleep(5);
+                const p = document.getElementById("fraseMotivazionale");
+                // cancella lentamente la frase vecchia
+                while (p.innerText.length>0) {
+                    p.innerText = p.innerText.slice(0,p.innerText.length-1);
+                    await sleep(5);
+                }
+
+                // scrive lentamente la frase corrente
+                for (let i=0; i<=data.frase.length; i++) {
+                    p.innerText = data.frase.slice(0,i);
+                    await sleep(5);
+                }
             }
-        });
+        }
+        xmlhttp.open("GET", `frasiMotivazionali?i=${indexFrase}`, true);
+        xmlhttp.send();
     }
     fetchFrase();
     setInterval(fetchFrase, 20000);
