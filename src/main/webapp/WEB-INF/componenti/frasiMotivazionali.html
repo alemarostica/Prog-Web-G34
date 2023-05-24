@@ -1,0 +1,41 @@
+<fieldset>
+    <legend>Frase Motivazionale</legend>
+    <p>"<span id="fraseMotivazionale"></span>"</p>
+</fieldset>
+
+<script>
+    let indexFrase = -1;
+    const sleep = async (t) => {
+        let r;
+        const p = new Promise((res)=>{r=res});
+        setInterval(r,t);
+        await p;
+        return;
+    }
+    const fetchFrase = ()=>{
+        // Il credentials omit è importante per impedire al fetch di settare cookie di sessione.
+        // Se non viene messo c'è il pericolo che il server setti il JSESSIONID anche se il client ha premuto "rifiuta cookies"
+        fetch(`frasiMotivazionali?i=${indexFrase}`, {
+            credentials: "omit"
+        })
+        .then(res=>res.json())
+        .then(async data=>{
+            indexFrase = data.numero;
+
+            const p = document.getElementById("fraseMotivazionale");
+            // cancella lentamente la frase vecchia
+            while (p.innerText.length>0) {
+                p.innerText = p.innerText.slice(0,p.innerText.length-1);
+                await sleep(5);
+            }
+
+            // scrive lentamente la frase corrente
+            for (let i=0; i<=data.frase.length; i++) {
+                p.innerText = data.frase.slice(0,i);
+                await sleep(5);
+            }
+        });
+    }
+    fetchFrase();
+    setInterval(fetchFrase, 20000);
+</script>

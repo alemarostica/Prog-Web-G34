@@ -8,7 +8,7 @@
     background: aliceblue;
     margin: 50px;
 ">
-<!-- navbar -->
+<%@include file="WEB-INF/componenti/navBar.jsp"%>
 <h1><%= "Insieme, possiamo cambiare il mondo: un gesto, un sorriso, una vita trasformata." %></h1>
 <table cellspacing="30">
 <tr>
@@ -26,6 +26,8 @@
     <img src="./src/main/resources/images/downloadicon.png" width="35" height="35"/>
   </button>
 </div>
-<!-- footer -->
+<%@include file="WEB-INF/componenti/frasiMotivazionali.html"%>
+<%@include file="WEB-INF/componenti/cookiePopup.jsp"%>
+<%@include file="WEB-INF/componenti/Footer.html"%>
 </body>
 </html>
