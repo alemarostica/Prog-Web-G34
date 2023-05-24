@@ -9,7 +9,7 @@
 <%@include file="WEB-INF/componenti/navBar.jsp"%>
 <h1><%= "Hello World!" %></h1>
 <br/>
-<a href="<%=response.encodeURL("hello-servlet")%>">Hello Servlet</a>
+<a href="<%= response.encodeURL("hello-servlet")%>">Hello Servlet</a>
 <%@include file="WEB-INF/componenti/frasiMotivazionali.html"%>
 <%@include file="WEB-INF/componenti/cookiePopup.jsp"%>
 <%@include file="WEB-INF/componenti/Footer.html"%>

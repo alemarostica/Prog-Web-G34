@@ -20,10 +20,12 @@ public class cookieFilter implements Filter {
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws ServletException, IOException {
         HttpServletRequest httpServletRequest = (HttpServletRequest)request;
+        HttpServletResponse httpServletResponse = (HttpServletResponse)response;
+
+        HttpSession sessione = httpServletRequest.getSession();
 
         // se il client ha settato un parametro accettaCookies a true, salva questa preferenza nella sessione
         String accettaCookies = httpServletRequest.getParameter("accettaCookies");
-        HttpSession sessione = httpServletRequest.getSession();
         if (accettaCookies != null && accettaCookies.equals("true")) {
             sessione.setAttribute("accettaCookies", true);
 
@@ -32,7 +34,7 @@ public class cookieFilter implements Filter {
             Cookie cookie = new Cookie("JSESSIONID", sessione.getId());
             cookie.setMaxAge(60*30);
             cookie.setHttpOnly(true);
-            ((HttpServletResponse)response).addCookie(cookie);
+            httpServletResponse.addCookie(cookie);
         }
 
         // processa la richiesta
@@ -42,7 +44,7 @@ public class cookieFilter implements Filter {
         if (sessione.getAttribute("accettaCookies") == null || !((Boolean)sessione.getAttribute("accettaCookies")) ) {
             Cookie cookie = new Cookie("JSESSIONID", "");
             cookie.setMaxAge(0);
-            ((HttpServletResponse)response).addCookie(cookie);
+            httpServletResponse.addCookie(cookie);
         }
     }
 }

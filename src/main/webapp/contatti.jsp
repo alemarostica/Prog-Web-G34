@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<!DOCTYPE html>
 <html>
 <head>
     <title>Contattaci - T4W</title>
@@ -41,6 +42,7 @@
 <br>
 <br>
 <br>
+<%@include file="WEB-INF/componenti/cookiePopup.jsp"%>
 <%@include file="WEB-INF/componenti/Footer.html"%>
 </body>
 </html>
