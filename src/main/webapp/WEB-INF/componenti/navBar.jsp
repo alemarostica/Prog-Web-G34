@@ -3,7 +3,7 @@
     <a href="<%= response.encodeURL("index.jsp")%>"><img class="logo" src="images/logo.png" alt="logo"></a>
     <a href="<%= response.encodeURL("chisiamo.jsp")%>">Chi Siamo</a>
     <a href="<%= response.encodeURL("attivita.jsp")%>">Attività</a>
-    <a href="<%= response.encodeURL("contatti.jsp")%>">Contatti</a>
+    <a href="<%= response.encodeURL("contatti")%>">Contatti</a>
     <%
         if (request.getSession().getAttribute("utente") == null) {
     %>
