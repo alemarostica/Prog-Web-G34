@@ -40,3 +40,7 @@ build/
 
 ### Esclusione di workspace.xml ###
 .idea/workspace.xml
+/derby.log
+/Start Derby.bat
+/Tum4WorldDB34/
+/.idea/
