@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Grazie - Tum4World</title>
 </head>
 <body>
 <%@include file="componenti/navBar.jsp"%>
@@ -17,7 +17,10 @@
 <p>Grazie <%=nameBean.toString()%></p>
 <p>Invio Confermato! Ti ricontatteremo presto.</p>
 <p><a href="<%=response.encodeURL("contatti")%>">Indietro</a></p>
-
+<%@include file="componenti/frasiMotivazionali.html"%>
+<br/>
+<br/>
+<br/>
 <%@include file="componenti/Footer.html"%>
 </body>
 </html>

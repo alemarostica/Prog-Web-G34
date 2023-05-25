@@ -49,6 +49,10 @@
   </tr>
 </table>
 <%@include file="WEB-INF/componenti/cookiePopup.jsp"%>
+<%@include file="WEB-INF/componenti/frasiMotivazionali.html"%>
+<br/>
+<br/>
+<br/>
 <%@include file="WEB-INF/componenti/Footer.html"%>
 </body>
 </html>

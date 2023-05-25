@@ -43,7 +43,6 @@
 <br>
 <br>
 <br>
-<br>
 <%@include file="WEB-INF/componenti/Footer.html"%>
 </body>
 </html>
