@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="Tum4WorldDB34@localhost" uuid="9ca4482f-7c0e-4aed-bf78-fd6d1cfc03b0">
+      <driver-ref>derby.remote</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.apache.derby.jdbc.ClientDriver</jdbc-driver>
+      <jdbc-url>jdbc:derby://localhost:1527/Tum4WorldDB34</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+  </component>
+</project>
