@@ -1,12 +1,10 @@
 package com.g34.unitn.it.progwebg34;
 
-import javax.mail.internet.MimeMessage;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.*;
 import java.util.*;
-import javax.mail.*;
 
 @WebServlet(name = "contatti", value = "/contatti")
 public class contatti extends HttpServlet {

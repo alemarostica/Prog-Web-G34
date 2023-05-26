@@ -7,9 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-<head>
-    <title>Contattaci - T4W</title>
-</head>
+<%@include file="componenti/head.html"%>
 <body>
 <%@include file="componenti/navBar.jsp"%>
 <div style="width: 100%; height: 80%">

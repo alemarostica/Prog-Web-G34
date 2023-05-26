@@ -1,8 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-    <head>
-        <title>Registrazione</title>
-    </head>
+    <%@include file="WEB-INF/componenti/head.html"%>
     <body>
     <fieldset>
         <legend>Registrati alla nostra associazione!</legend>

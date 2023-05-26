@@ -6,10 +6,9 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<!DOCTYPE html>
 <html>
-<head>
-    <title>Contattaci - T4W</title>
-</head>
+<%@include file="WEB-INF/componenti/head.html"%>
 <body>
 <%@include file="WEB-INF/componenti/navBar.jsp"%>
 <div style="width: 100%; height: 80%">

@@ -1,9 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Tum4World</title>
-</head>
+<%@include file="WEB-INF/componenti/head.html"%>
 <body style="
     background: aliceblue;
     margin: 50px;

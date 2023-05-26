@@ -7,15 +7,13 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-<head>
-    <title>Attività - Tum4World</title>
-</head>
+<!DOCTYPE html>
+<%@include file="WEB-INF/componenti/head.html"%>
 <body style="
     background: aliceblue;
     margin: 50px;
 ">
 <%@include file="WEB-INF/componenti/navBar.jsp"%>
-<!DOCTYPE html>
 <h1>Cosa facciamo?</h1>
 <h2>Agiamo su molti fronti</h2>
 <p style="font-size: 20px"><%="L'associzione umanitaria Tum4World si impegna su numerosi fronti umanitari nei quali raggiunge periodicamente importanti traguardi. Esplora le attività che porta avanti!"%></p>

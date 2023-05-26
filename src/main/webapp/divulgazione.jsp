@@ -8,9 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Mobilitazione risorse - Tum4World</title>
-</head>
+<%@include file="WEB-INF/componenti/head.html"%>
 <body style="
     background: aliceblue;
     margin: 50px;
