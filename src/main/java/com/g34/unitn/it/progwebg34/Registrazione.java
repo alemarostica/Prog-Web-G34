@@ -11,6 +11,7 @@ import java.sql.*;
 public class Registrazione extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        //forward alla jsp con il form della registrazione
         request.getRequestDispatcher("WEB-INF/registrazione.jsp").forward(request, response);
     }
 
@@ -61,12 +62,14 @@ public class Registrazione extends HttpServlet {
 
             //chiusura connessione
             con.close();
+
+            //portare alla pagina di conferma della registrazione
+            NameBean nameBean = new NameBean();
+            nameBean.setNome(nome);
+            request.setAttribute("nameBean", nameBean);
+            request.getRequestDispatcher("WEB-INF/registrazioneConfermata.jsp").forward(request,response);
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         }
-
-
-
-
     }
 }
