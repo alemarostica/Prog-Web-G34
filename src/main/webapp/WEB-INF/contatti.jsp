@@ -19,12 +19,13 @@
     </div>
     <div style="width: 50%; float: right;">
         <h1>Lasciaci un messaggio, ti ricontatteremo il più presto possibile</h1>
-        <form action="<%=response.encodeURL("contatti")%>" method="post">
+        <form action="<%=response.encodeURL("contatti")%>" method="post" onsubmit="return validaFormContatti(this)">
             <label>Nome</label><input type="text" name="nome" id="nome">
             <label>Cognome</label><input type="text" name="cognome" id="cognome"><br/>
             <label>e-mail</label><input type="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" id="email"><br/>
             <label>Per quale motivo ci stai contattando?</label>
             <select name="motivo" id="motivo">
+                <option value="scegli">--SCEGLI--</option>
                 <option value="consiglio">Darvi un consiglio</option>
                 <option value="informazioni">Chiedere informazioni</option>
                 <option value="aiuto">Chiedere aiuto</option>
@@ -32,6 +33,7 @@
             </select> <br/>
             <textarea id="msg" name="msg" row="10" cols="70" placeholder="Scrivi qui il tuo messaggio..."></textarea>
             <br/>
+            <p id="erroriForm"></p>
             <input type="reset" />
             <input type="submit" />
         </form>
@@ -43,5 +45,6 @@
 <br>
 <br>
 <%@include file="componenti/Footer.html"%>
+<script src="src/main/resources/js/validaFormContatti.js"></script>
 </body>
 </html>
