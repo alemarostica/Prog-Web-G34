@@ -1,3 +1,4 @@
+<%@ page import="com.g34.unitn.it.progwebg34.ErrorBean" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
     <head>
@@ -22,11 +23,20 @@
                 <label for="ripeti-password">Ripeti la password: </label><input type="password" id="ripeti-password" name="ripetiPassword" minlength="8" required><br><br>
 
                 <p id="erroriForm"></p><br><br>
+                <%
+                    //stampa di eventuali errori provenienti da un tentativo di registrazione precedente
+                    if(request.getAttribute("erroreRegistrazione") != null){
+                        %>
+                <jsp:useBean id="erroreRegistrazione" scope="request" class="com.g34.unitn.it.progwebg34.ErrorBean"/>
+                <p><%= erroreRegistrazione.getTitle() %>: <%= erroreRegistrazione.getMessage() %></p>
+                <%
+                    }
+                %>
 
                 <button type="submit">Invia</button>
                 <button type="reset">Reset</button>
             </form>
         </fieldset>
-        <script src="src/main/resources/js/validaFormContatti.js"></script>
+        <script src="src/main/resources/js/validaFormRegistrazione.js"></script>
     </body>
 </html>

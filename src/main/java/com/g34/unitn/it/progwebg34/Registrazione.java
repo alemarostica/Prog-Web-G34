@@ -1,5 +1,7 @@
 package com.g34.unitn.it.progwebg34;
 
+import org.apache.derby.shared.common.error.DerbySQLIntegrityConstraintViolationException;
+
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
@@ -57,8 +59,19 @@ public class Registrazione extends HttpServlet {
             s.setString(7, telefono);
             s.setInt(8, tipoRegistrazione);
 
-            //invio statement
-            s.executeUpdate();
+            try{
+                //invio statement
+                s.executeUpdate();
+            }catch(DerbySQLIntegrityConstraintViolationException e){
+                //in caso di username o email non univoci, forward alla pagina di registrazione con errore associato
+                ErrorBean errore = new ErrorBean();
+                errore.setTitle("Errore nella procedura di registrazione");
+                errore.setMessage("Un utente con questo username o questa email è già registrato.");
+                request.setAttribute("erroreRegistrazione", errore);
+
+                request.getRequestDispatcher("WEB-INF/registrazione.jsp").forward(request,response);
+            }
+
 
             //chiusura connessione
             con.close();
@@ -69,7 +82,13 @@ public class Registrazione extends HttpServlet {
             request.setAttribute("nameBean", nameBean);
             request.getRequestDispatcher("WEB-INF/registrazioneConfermata.jsp").forward(request,response);
         } catch (ClassNotFoundException | SQLException e) {
-            e.printStackTrace();
+            //in caso di errore al collegamento con il database, forward alla pagina di registrazione con errore associato
+            ErrorBean errore = new ErrorBean();
+            errore.setTitle("Errore nella procedura di registrazione");
+            errore.setMessage("Errore nel collegamento con il database.");
+            request.setAttribute("erroreRegistrazione", errore);
+
+            request.getRequestDispatcher("WEB-INF/registrazione.jsp").forward(request,response);
         }
     }
 }

@@ -1,4 +1,4 @@
-function validaFormRegistrazione() {
+function validaFormRegistrazione(form) {
     const paragrafoErrori = document.getElementById("erroriForm");
     paragrafoErrori.innerText="";
 
@@ -40,6 +40,12 @@ function validaFormRegistrazione() {
     if (dataNascita==="") {
         valido = false;
         paragrafoErrori.innerHTML += "provvedere una data di nascita valida<br/>";
+    }else{
+        const dateDiff = new Date() - new Date(dataNascita);
+        if(new Date(dateDiff).getFullYear() < 1988){
+            valido = false;
+            paragrafoErrori.innerHTML += "per registrarsi bisogna avere almeno 18 anni<br/>";
+        }
     }
     if (!email.match(/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/)) {
         valido = false;
