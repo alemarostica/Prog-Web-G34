@@ -4,10 +4,7 @@ target/
 !**/src/test/**/target/
 
 ### IntelliJ IDEA ###
-.idea/modules.xml
-.idea/jarRepositories.xml
-.idea/compiler.xml
-.idea/libraries/
+.idea/
 *.iws
 *.iml
 *.ipr
@@ -37,5 +34,7 @@ build/
 ### Mac OS ###
 .DS_Store
 
-### Esclusione di workspace.xml ###
-.idea/workspace.xml
+### Esclusione dei file relativi al database ###
+/derby.log
+/Start Derby.bat
+/Tum4WorldDB34/
