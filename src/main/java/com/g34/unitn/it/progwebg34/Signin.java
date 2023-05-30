@@ -14,6 +14,7 @@ public class Signin extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         //forward alla jsp con il form della registrazione
+        ContatoreVisite.incrementa("signin.jsp");
         request.getRequestDispatcher("WEB-INF/signin.jsp").forward(request, response);
     }
 
@@ -88,6 +89,7 @@ public class Signin extends HttpServlet {
             errore.setMessage("Errore nel collegamento con il database.");
             request.setAttribute("erroreRegistrazione", errore);
 
+            ContatoreVisite.incrementa("signin.jsp");
             request.getRequestDispatcher("WEB-INF/signin.jsp").forward(request,response);
         }
     }
