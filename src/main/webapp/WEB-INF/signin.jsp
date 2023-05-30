@@ -1,13 +1,12 @@
 <%@ page import="com.g34.unitn.it.progwebg34.ErrorBean" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-    <head>
-        <title>Registrazione</title>
-    </head>
+    <%@include file="componenti/head.html"%>
     <body>
+        <%@include file="componenti/navBar.jsp"%>
         <fieldset>
             <legend>Registrati alla nostra associazione!</legend>
-            <form action="<%= response.encodeURL("registrazione")%>" method="post" onsubmit="return validaFormRegistrazione(this)">
+            <form action="<%= response.encodeURL("signin")%>" method="post" onsubmit="return validaFormRegistrazione(this)">
                 <label for="nome">Nome: </label><input type="text" id="nome" name="nome" required><br>
                 <label for="cognome">Cognome: </label><input type="text" id="cognome" name="cognome" required><br>
                 <label for="data-nascita">Data di nascita: </label><input type="date" id="data-nascita" name="dataNascita" required><br>
@@ -37,6 +36,12 @@
                 <button type="reset">Reset</button>
             </form>
         </fieldset>
+        <%@include file="componenti/frasiMotivazionali.html"%>
+        <br>
+        <br>
+        <br>
+        <br>
+        <%@include file="componenti/Footer.html"%>
         <script src="src/main/resources/js/validaFormRegistrazione.js"></script>
     </body>
 </html>

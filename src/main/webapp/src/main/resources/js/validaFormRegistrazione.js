@@ -62,6 +62,9 @@ function validaFormRegistrazione(form) {
     if (password==="") {
         valido = false;
         paragrafoErrori.innerHTML += "provvedere una password valida<br/>";
+    }else if(!/^(?=.*[dD])(?=.*[lL])(?=.*[aA])(?=.*[rR])(?=.*[A-Z])(?=.*[0-9])(?=.*[?!$]).{8}$/.test(password)){
+        valido = false;
+        paragrafoErrori.innerHTML += "la password deve essere lunga 8 caratteri, deve contenere le lettere L, D, A, R, almeno un carattere numerico, un carattere maiuscolo e un carattere tra $, ! e ?<br/>";
     }
     if (ripetiPassword==="") {
         valido = false;

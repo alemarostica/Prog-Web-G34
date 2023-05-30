@@ -9,12 +9,12 @@ import java.io.IOException;
 import java.sql.*;
 
 
-@WebServlet(name = "Registrazione", value = "/registrazione")
-public class Registrazione extends HttpServlet {
+@WebServlet(name = "Signin", value = "/signin")
+public class Signin extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         //forward alla jsp con il form della registrazione
-        request.getRequestDispatcher("WEB-INF/registrazione.jsp").forward(request, response);
+        request.getRequestDispatcher("WEB-INF/signin.jsp").forward(request, response);
     }
 
     @Override
@@ -69,7 +69,7 @@ public class Registrazione extends HttpServlet {
                 errore.setMessage("Un utente con questo username o questa email è già registrato.");
                 request.setAttribute("erroreRegistrazione", errore);
 
-                request.getRequestDispatcher("WEB-INF/registrazione.jsp").forward(request,response);
+                request.getRequestDispatcher("WEB-INF/signin.jsp").forward(request,response);
             }
 
 
@@ -88,7 +88,7 @@ public class Registrazione extends HttpServlet {
             errore.setMessage("Errore nel collegamento con il database.");
             request.setAttribute("erroreRegistrazione", errore);
 
-            request.getRequestDispatcher("WEB-INF/registrazione.jsp").forward(request,response);
+            request.getRequestDispatcher("WEB-INF/signin.jsp").forward(request,response);
         }
     }
 }
