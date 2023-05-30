@@ -1,0 +1,10 @@
+.cookie{
+    z-index: 100;
+    width: 25%;
+    height: auto;
+    position: fixed;
+    bottom: 0;
+    left:0;
+    background-color: antiquewhite;
+    border-radius: 20px;
+}

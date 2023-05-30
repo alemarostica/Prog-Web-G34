@@ -2,6 +2,10 @@ target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
+!**/.idea/misc.xml
+/Start Derby.bat
+/derby.log
+/Tum4WorldDB34/
 
 ### IntelliJ IDEA ###
 .idea/
@@ -34,7 +38,9 @@ build/
 ### Mac OS ###
 .DS_Store
 
-### Esclusione dei file relativi al database ###
+### Esclusione di workspace.xml ###
+.idea/workspace.xml
 /derby.log
 /Start Derby.bat
 /Tum4WorldDB34/
+/.idea/
