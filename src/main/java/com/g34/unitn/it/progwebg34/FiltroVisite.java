@@ -15,9 +15,11 @@ public class FiltroVisite implements Filter {
 
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws ServletException, IOException {
-        String nomePagina = ((HttpServletRequest)request).getRequestURL().toString();
+        String[] parti = ((HttpServletRequest)request).getRequestURI().split("/",-1);
+        String nomePagina = parti[parti.length-1];
+        if (nomePagina.equals("")) nomePagina="index.jsp";
         ContatoreVisite.incrementa(nomePagina);
-        System.out.println("Visited: "+nomePagina);
+        System.out.println(nomePagina);
         chain.doFilter(request, response);
     }
 }
