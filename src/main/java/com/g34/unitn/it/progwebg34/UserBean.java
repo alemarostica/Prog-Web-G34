@@ -9,7 +9,7 @@ public class UserBean {
     private Date dataNascita;
     private String email;
     private String telefono;
-    private int tipologia;
+    private int tipologia;      //0 -> simpatizzante, 1 -> aderente, 2 -> amministratore
 
     public UserBean() {
         this.username = "";

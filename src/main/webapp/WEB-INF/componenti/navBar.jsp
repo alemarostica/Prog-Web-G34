@@ -10,8 +10,6 @@
         <a href="<%= response.encodeURL("signin")%>"><button>Sign in</button></a>
         <a href="<%= response.encodeURL("login")%>"><button>Log in</button></a>
     <%}else{%>
-        <% /* Per il logout dovremmo togliere l'attributo utente dalla sessione e refreshare la pagina
-              Non so ancora come gestirlo*/ %>
-        <button>logout</button>
+        <a href="<%= response.encodeURL(".") + "?logout=true" %>"><button>Log out</button></a>
     <%}%>
 </fieldset>
