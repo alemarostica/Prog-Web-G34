@@ -20,9 +20,11 @@
 </table>
 <div style="padding-left: 100px">
 <h2><%="Scarica il nostro volantino" %></h2>
-  <button style="font-size: 30px; border-radius: 12px;">Download
-    <img src="./src/main/resources/images/downloadicon.png" width="35" height="35"/>
-  </button>
+  <a href="src/main/resources/pdf/volantino.pdf" download>
+    <button style="font-size: 30px; border-radius: 12px;">Download
+      <img src="./src/main/resources/images/downloadicon.png" width="35" height="35"/>
+    </button>
+  </a>
 </div>
 <%@include file="WEB-INF/componenti/frasiMotivazionali.html"%>
 <br/>
