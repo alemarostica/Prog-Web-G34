@@ -7,6 +7,12 @@ import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.sql.*;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.util.Locale;
+import java.util.Date;
 
 
 @WebServlet(name = "Signin", value = "/signin")
@@ -27,7 +33,6 @@ public class Signin extends HttpServlet {
         String dataNascita = request.getParameter("dataNascita");
         String email = request.getParameter("email");
         String telefono = request.getParameter("telefono");
-        String tmp = request.getParameter("tipoRegistrazione");
         int tipoRegistrazione = Integer.parseInt(request.getParameter("tipoRegistrazione"));
         String username = request.getParameter("username");
         String password = request.getParameter("password");
@@ -72,9 +77,24 @@ public class Signin extends HttpServlet {
                 request.getRequestDispatcher("WEB-INF/signin.jsp").forward(request,response);
             }
 
-
             //chiusura connessione
             con.close();
+
+            //login automatico dell'utente dopo aver svolto la registrazione
+            UserBean uBean = new UserBean();
+            uBean.setUsername(username);
+            uBean.setNome(nome);
+            uBean.setCognome(cognome);
+
+            //conversione della data da stringa a oggetto Date
+            DateFormat format = new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH);
+            uBean.setDataNascita(format.parse(dataNascita));
+
+            uBean.setEmail(cognome);
+            uBean.setTelefono(telefono);
+            uBean.setTipologia(tipoRegistrazione);
+
+            request.getSession().setAttribute("user", uBean);
 
             //portare alla pagina di conferma della registrazione
             NameBean nameBean = new NameBean();
@@ -86,6 +106,14 @@ public class Signin extends HttpServlet {
             ErrorBean errore = new ErrorBean();
             errore.setTitle("Errore nella procedura di registrazione");
             errore.setMessage("Errore nel collegamento con il database.");
+            request.setAttribute("erroreRegistrazione", errore);
+
+            request.getRequestDispatcher("WEB-INF/signin.jsp").forward(request,response);
+        } catch (ParseException e) {
+            //in caso di errore di conversione della data, forward alla pagina di registrazione con errore associato
+            ErrorBean errore = new ErrorBean();
+            errore.setTitle("Errore nella procedura di registrazione");
+            errore.setMessage("Errore nel processamento dei dati.");
             request.setAttribute("erroreRegistrazione", errore);
 
             request.getRequestDispatcher("WEB-INF/signin.jsp").forward(request,response);
