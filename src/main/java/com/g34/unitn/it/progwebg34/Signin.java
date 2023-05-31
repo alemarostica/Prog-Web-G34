@@ -75,6 +75,7 @@ public class Signin extends HttpServlet {
                 errore.setMessage("Un utente con questo username o questa email è già registrato.");
                 request.setAttribute("erroreRegistrazione", errore);
 
+                ContatoreVisite.incrementa("signin.jsp");
                 request.getRequestDispatcher("WEB-INF/signin.jsp").forward(request,response);
             }
 
@@ -101,6 +102,7 @@ public class Signin extends HttpServlet {
             NameBean nameBean = new NameBean();
             nameBean.setNome(nome);
             request.setAttribute("nameBean", nameBean);
+            ContatoreVisite.incrementa("registrazioneConfermata.jsp");
             request.getRequestDispatcher("WEB-INF/registrazioneConfermata.jsp").forward(request,response);
         } catch (ClassNotFoundException | SQLException e) {
             //in caso di errore al collegamento con il database, forward alla pagina di registrazione con errore associato
@@ -118,6 +120,7 @@ public class Signin extends HttpServlet {
             errore.setMessage("Errore nel processamento dei dati.");
             request.setAttribute("erroreRegistrazione", errore);
 
+            ContatoreVisite.incrementa("signin.jsp");
             request.getRequestDispatcher("WEB-INF/signin.jsp").forward(request,response);
         }
     }

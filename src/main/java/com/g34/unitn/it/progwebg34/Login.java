@@ -16,6 +16,7 @@ public class Login extends HttpServlet {
             response.sendRedirect(response.encodeRedirectURL("index.jsp"));
         }else {
             //forward alla jsp con il form del login
+            ContatoreVisite.incrementa("login.jsp");
             request.getRequestDispatcher("WEB-INF/login.jsp").forward(request, response);
         }
     }
@@ -56,6 +57,7 @@ public class Login extends HttpServlet {
                 errore.setMessage("Un utente con l'username fornito non esiste");
                 request.setAttribute("erroreLogin", errore);
 
+                ContatoreVisite.incrementa("logout.jsp");
                 request.getRequestDispatcher("WEB-INF/login.jsp").forward(request,response);
             }else {
                 //verifico se la password ricevuta dalla richiesta corrisponde a quella ottenuta dal DB
@@ -77,6 +79,7 @@ public class Login extends HttpServlet {
                     errore.setMessage("Le password non corrispondono.");
                     request.setAttribute("erroreLogin", errore);
 
+                    ContatoreVisite.incrementa("login.jsp");
                     request.getRequestDispatcher("WEB-INF/login.jsp").forward(request, response);
                 }
             }
@@ -97,6 +100,7 @@ public class Login extends HttpServlet {
 
             e.printStackTrace();
 
+            ContatoreVisite.incrementa("login.jsp");
             request.getRequestDispatcher("WEB-INF/login.jsp").forward(request,response);
         }
     }
