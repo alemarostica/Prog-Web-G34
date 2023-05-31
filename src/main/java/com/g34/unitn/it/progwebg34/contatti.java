@@ -10,6 +10,7 @@ import java.util.*;
 public class contatti extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        ContatoreVisite.incrementa("contatti.jsp");
         request.getRequestDispatcher("WEB-INF/contatti.jsp").forward(request,response);
     }
 
@@ -32,6 +33,7 @@ public class contatti extends HttpServlet {
         NameBean nameBean = new NameBean();
         nameBean.setNome(nome);
         request.setAttribute("nameBean", nameBean);
+        ContatoreVisite.incrementa("invioConfermato.jsp");
         request.getRequestDispatcher("WEB-INF/invioConfermato.jsp").forward(request,response);
     }
 
