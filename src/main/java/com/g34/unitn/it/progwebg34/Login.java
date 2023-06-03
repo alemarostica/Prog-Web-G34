@@ -67,7 +67,7 @@ public class Login extends HttpServlet {
                     uBean.setNome(rs.getString("Nome"));
                     uBean.setCognome(rs.getString("Cognome"));
                     uBean.setDataNascita(rs.getDate("DataNascita"));
-                    uBean.setEmail(rs.getString("Cognome"));
+                    uBean.setEmail(rs.getString("Email"));
                     uBean.setTelefono(rs.getString("Telefono"));
                     uBean.setTipologia(rs.getInt("Tipologia"));
 
