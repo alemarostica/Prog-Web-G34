@@ -92,7 +92,7 @@ public class Signin extends HttpServlet {
             DateFormat format = new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH);
             uBean.setDataNascita(format.parse(dataNascita));
 
-            uBean.setEmail(cognome);
+            uBean.setEmail(email);
             uBean.setTelefono(telefono);
             uBean.setTipologia(tipoRegistrazione);
 
