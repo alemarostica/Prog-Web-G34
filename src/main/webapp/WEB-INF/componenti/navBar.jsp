@@ -10,6 +10,7 @@
         <a href="<%= response.encodeURL("signin")%>"><button>Sign in</button></a>
         <a href="<%= response.encodeURL("login")%>"><button>Log in</button></a>
     <%}else{%>
+        <a href="<%=response.encodeURL("areaPrivata")%>"><button>Area Privata</button></a>
         <a href="<%= response.encodeURL(".") + "?logout=true" %>"><button>Log out</button></a>
     <%}%>
 </fieldset>

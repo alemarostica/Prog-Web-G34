@@ -31,6 +31,9 @@ public class VisitePagine extends HttpServlet {
         String nomePagina = request.getParameter("reset");
 
         //resetto il contatore associato alla pagina specificata
-        ContatoreVisite.reset(nomePagina);
+        if (nomePagina != null)
+            ContatoreVisite.reset(nomePagina);
+        else
+            ContatoreVisite.reset();
     }
 }
