@@ -6,7 +6,7 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 
 @WebServlet(name = "areaPrivata", value = "/areaPrivata")
-public class areaPrivata extends HttpServlet {
+public class AreaPrivata extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession sessione = request.getSession();

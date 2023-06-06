@@ -7,7 +7,7 @@ import java.io.*;
 import java.util.*;
 
 @WebServlet(name = "contatti", value = "/contatti")
-public class contatti extends HttpServlet {
+public class Contatti extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         ContatoreVisite.incrementa("contatti.jsp");
