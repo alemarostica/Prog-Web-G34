@@ -7,12 +7,12 @@
         <fieldset>
             <legend>Accedi</legend>
             <form action="<%= response.encodeURL("login")%>" method="post" onsubmit="return validaFormLogin(this)">
-                <label for="username">Username: </label><input type="text" id="username" name="username" required><br>
-                <label for="password">Password: </label><input type="password" id="password" name="password" minlength="8" required><br><br>
+                <label for="username">Username: </label><input type="text" id="username" name="username"><br>
+                <label for="password">Password: </label><input type="password" id="password" name="password"><br><br>
 
                 <p id="erroriForm"></p><br><br>
                 <%
-                    //stampa di eventuali errori provenienti da un tentativo di registrazione precedente
+                    //stampa di eventuali errori provenienti da un tentativo di login precedente
                     if(request.getAttribute("erroreLogin") != null){
                 %>
                 <jsp:useBean id="erroreLogin" scope="request" class="com.g34.unitn.it.progwebg34.ErrorBean"/>
@@ -31,5 +31,6 @@
         <br>
         <br>
         <%@include file="componenti/Footer.html"%>
+        <script src="src/main/resources/js/validaFormLogin.js"></script>
     </body>
 </html>

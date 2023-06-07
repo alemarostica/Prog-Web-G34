@@ -8,6 +8,20 @@ import java.sql.*;
 
 @WebServlet(name = "Login", value = "/login")
 public class Login extends HttpServlet {
+    String url = "jdbc:derby://localhost:1527/Tum4WorldDB34";
+    Connection connection = null;
+
+    @Override
+    public void init() {
+        //COLLEGAMENTO AL DATABASE
+        try {
+            Class.forName("org.apache.derby.jdbc.ClientDriver");
+            connection = DriverManager.getConnection(url);
+        } catch (ClassNotFoundException | NullPointerException | SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         //verifico se l'utente è già loggato oppure no
@@ -32,19 +46,10 @@ public class Login extends HttpServlet {
 
         //eseguire controlli sui dati anche lato server?
 
-        //COLLEGAMENTO AL DATABASE
-        String url = "jdbc:derby://localhost:1527/Tum4WorldDB34";
-
         try {
-            //caricamento driver
-            Class.forName("org.apache.derby.jdbc.ClientDriver");
-
-            //apertura connessione al database
-            Connection con = DriverManager.getConnection(url);
-
             //preparazione statement
             String query = "SELECT * FROM Iscritto WHERE Username=?";
-            PreparedStatement s = con.prepareStatement(query);
+            PreparedStatement s = connection.prepareStatement(query);
             s.setString(1,username);
 
             ResultSet rs = s.executeQuery();
@@ -53,7 +58,7 @@ public class Login extends HttpServlet {
             if(!rs.next()){
                 //in caso di resultSet vuoto (username inesistente), forward alla pagina di login con errore associato
                 ErrorBean errore = new ErrorBean();
-                errore.setTitle("Errore nella procedura di login");
+                errore.setTitle("34");
                 errore.setMessage("Un utente con l'username fornito non esiste");
                 request.setAttribute("erroreLogin", errore);
 
@@ -75,7 +80,7 @@ public class Login extends HttpServlet {
                 } else {
                     //in caso di password sbagliata, forward alla pagina di login con errore associato
                     ErrorBean errore = new ErrorBean();
-                    errore.setTitle("Errore nella procedura di login");
+                    errore.setTitle("34");
                     errore.setMessage("Le password non corrispondono.");
                     request.setAttribute("erroreLogin", errore);
 
@@ -84,17 +89,14 @@ public class Login extends HttpServlet {
                 }
             }
 
-            //chiusura connessione
-            con.close();
-
             //redirect alla home per concludere la procedura di login
             response.sendRedirect(response.encodeRedirectURL("index.jsp"));
 
 
-        } catch (ClassNotFoundException | SQLException e) {
+        } catch (SQLException e) {
             //in caso di errore al collegamento con il database, forward alla pagina di login con errore associato
             ErrorBean errore = new ErrorBean();
-            errore.setTitle("Errore nella procedura di login");
+            errore.setTitle("34");
             errore.setMessage("Errore nel collegamento con il database.");
             request.setAttribute("erroreLogin", errore);
 
@@ -102,6 +104,16 @@ public class Login extends HttpServlet {
 
             ContatoreVisite.incrementa("login.jsp");
             request.getRequestDispatcher("WEB-INF/login.jsp").forward(request,response);
+        }
+    }
+
+    @Override
+    public void destroy() {
+        //CHIUSURA CONNESSIONE
+        try {
+            connection.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
     }
 }

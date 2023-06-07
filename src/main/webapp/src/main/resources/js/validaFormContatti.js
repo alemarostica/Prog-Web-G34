@@ -14,20 +14,22 @@ function validaFormContatti(form) {
     let valido = true;
     if (nome==="") {
         valido = false;
-        paragrafoErrori.innerHTML += "provvedere un nome valido<br/>";
+        paragrafoErrori.innerHTML += "34: il campo nome deve essere compilato<br/>";
     }
     if (cognome==="") {
         valido = false;
-        paragrafoErrori.innerHTML += "provvedere un cognome valido<br/>";
+        paragrafoErrori.innerHTML += "34: il campo cognome deve essere compilato<br/>";
     }
-    if (!email.match(/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/)) {
+    if (email==="") {
         valido = false;
-        paragrafoErrori.innerHTML += "provvedere una email valida<br/>";
+        paragrafoErrori.innerHTML += "34: il campo email deve essere compilato<br/>";
+    }else if (!email.match(/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/)) {
+        valido = false;
+        paragrafoErrori.innerHTML += "34: l'email inserita non è valida<br/>";
     }
-
     if (motivo==="scegli") {
         valido = false;
-        paragrafoErrori.innerHTML += "provvedere un motivo valido<br/>";
+        paragrafoErrori.innerHTML += "34: scegli una motivazione<br/>";
     }
 
     return valido;

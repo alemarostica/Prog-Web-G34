@@ -25,7 +25,7 @@
             <label>e-mail</label><input type="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" id="email"><br/>
             <label>Per quale motivo ci stai contattando?</label>
             <select name="motivo" id="motivo">
-                <option value="scegli">--SCEGLI--</option>
+                <option value="scegli" selected disabled hidden>-- SCEGLI --</option>
                 <option value="consiglio">Darvi un consiglio</option>
                 <option value="informazioni">Chiedere informazioni</option>
                 <option value="aiuto">Chiedere aiuto</option>
