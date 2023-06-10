@@ -1,0 +1,25 @@
+.form {
+
+}
+
+/* stile campi di input */
+.form-signin input {
+    border: 2px transparent;
+    outline: none;
+
+    font-size: 18px;
+    line-height: 1.5;
+    color: #4f4f4f;
+
+    display: inline-block;
+    background: #efefef;
+    height: 40px;
+    border-radius: 8px;
+    padding: 0 20px;
+    margin-bottom: 10px;
+}
+
+.form input:focus {
+    background: #e1e1e1;
+}
+/* fine stile campi di input */
