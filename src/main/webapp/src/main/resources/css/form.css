@@ -3,11 +3,11 @@
 }
 
 /* stile campi di input */
-.form-signin input {
+.form-signin input:not([type=radio]) {
     border: 2px transparent;
     outline: none;
 
-    font-size: 18px;
+    font-size: 16px;
     line-height: 1.5;
     color: #4f4f4f;
 
@@ -19,7 +19,28 @@
     margin-bottom: 10px;
 }
 
-.form input:focus {
+.form-signin input:not([type=radio]):focus {
     background: #e1e1e1;
+}
+
+/* stile bottoni radio */
+.form-signin input[type=radio] {
+    appearance: none;   /* rimuove lo stile di base dei bottoni radio */
+
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    line-height: 1.5;
+
+    border: none;
+    background: #efefef;
+    cursor: pointer;
+
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.form-signin input[type=radio]:checked {
+    border: 6px solid #0078d6;
 }
 /* fine stile campi di input */
