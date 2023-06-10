@@ -23,7 +23,11 @@
                 <label for="password">Password: </label><input type="password" id="password" name="password" placeholder="Password"><br>
                 <label for="ripeti-password">Ripeti la password: </label><input type="password" id="ripeti-password" name="ripetiPassword" placeholder="Password"><br><br>
 
-                <p id="erroriForm"></p><br><br>
+                <fieldset class="error-section">
+                    <legend>Errore nella procedura di registrazione</legend>
+                    <p id="erroriForm"></p>
+                </fieldset>
+                <br><br>
                 <%
                     //stampa di eventuali errori provenienti da un tentativo di registrazione precedente
                     if(request.getAttribute("erroreRegistrazione") != null){

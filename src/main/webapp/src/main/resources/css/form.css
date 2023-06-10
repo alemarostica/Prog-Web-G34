@@ -43,4 +43,20 @@
 .form-signin input[type=radio]:checked {
     border: 6px solid #0078d6;
 }
-/* fine stile campi di input */
+
+/* stile contenitore dei messaggi di errore del form */
+.error-section {
+    font-family: sans-serif;
+    border-radius: 12px;
+    background: #ffaaaa;
+    border: none;
+}
+
+.error-section legend {
+    height: 40px;
+    line-height: 2.5;
+    padding: 0 20px;
+    border-radius: 8px;
+    color: white;
+    background: #d00000;
+}
