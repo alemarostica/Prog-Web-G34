@@ -1,5 +1,31 @@
-.form {
+.form-signin {
+    max-width: 600px;
+}
 
+.form-signin > div:not(.radio-field) {
+    display: flex;
+    align-items: baseline;
+}
+
+.form-signin > div:not(.radio-field,.form-controls) > * {
+    flex: 50%;
+}
+
+.form-signin > div:not(.radio-field) > label {
+    height: fit-content;
+}
+
+.form-signin > div.radio-field {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.form-signin > div.form-controls {
+    justify-content: end;
+}
+
+.form-signin > div.form-controls > * {
+    margin-left: 20px;
 }
 
 /* stile campi di input */
@@ -37,7 +63,7 @@
     cursor: pointer;
 
     display: inline-block;
-    margin-bottom: 10px;
+    margin: 0px 20px;
 }
 
 .form-signin input[type=radio]:checked {
@@ -50,6 +76,14 @@
     border-radius: 12px;
     background: #ffaaaa;
     border: none;
+    margin: 10px 0px;
+
+    display: none;  /* di default è nascosto per quando non ci sono errori */
+}
+
+.error-section.visible {    /* classe da aggiungere per mostrare gli errori */
+    /* siccome questo selettore css è più specifico, il display: none viene sovrascritto */
+    display: block;
 }
 
 .error-section legend {
@@ -59,4 +93,26 @@
     border-radius: 8px;
     color: white;
     background: #d00000;
+}
+
+/* stile pulsanti form */
+.form-controls > button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+
+    font-size: 16px;
+    line-height: 1.5;
+
+    display: inline-block;
+    background: #efefef;
+    height: 40px;
+    border-radius: 8px;
+    padding: 0 20px;
+    margin-bottom: 10px;
+}
+
+.form-controls > button[type=submit] {
+    background-color: #91ef91;
+    font-weight: bold;
 }

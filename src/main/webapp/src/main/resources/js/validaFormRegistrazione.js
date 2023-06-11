@@ -1,4 +1,5 @@
 function validaFormRegistrazione(form) {
+    const sezioneErrori = document.getElementsByClassName("error-section")[0];
     const paragrafoErrori = document.getElementById("erroriForm");
     paragrafoErrori.innerText="";
 
@@ -90,6 +91,11 @@ function validaFormRegistrazione(form) {
     if (password!==ripetiPassword) {
         valido = false;
         paragrafoErrori.innerHTML += "34: le due password non corrispondono<br/>";
+    }
+
+    //se ci sono errori aggiungo la classe visible al contenitore per mostrare gli errori
+    if(!valido){
+        sezioneErrori.classList.add("visible");
     }
 
     return valido;

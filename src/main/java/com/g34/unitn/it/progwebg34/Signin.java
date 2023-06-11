@@ -74,7 +74,7 @@ public class Signin extends HttpServlet {
                 //in caso di username o email non univoci, forward alla pagina di registrazione con errore associato
                 ErrorBean errore = new ErrorBean();
                 errore.setTitle("34");
-                errore.setMessage("Un utente con questo username o questa email è già registrato.");
+                errore.setMessage("Un utente con questo username o questa email è già registrato");
                 request.setAttribute("erroreRegistrazione", errore);
 
                 ContatoreVisite.incrementa("signin.jsp");
