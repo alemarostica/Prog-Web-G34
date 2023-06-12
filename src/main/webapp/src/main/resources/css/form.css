@@ -30,7 +30,7 @@
 
 /* stile campi di input */
 .form-signin input:not([type=radio]) {
-    border: 2px transparent;
+    border: 2px solid transparent;
     outline: none;
 
     font-size: 16px;
@@ -47,6 +47,10 @@
 
 .form-signin input:not([type=radio]):focus {
     background: #e1e1e1;
+}
+
+.form-signin input:not([type=radio]).red-border {
+    border: 2px solid red;
 }
 
 /* stile bottoni radio */
