@@ -1,35 +1,38 @@
-.form-signin {
+form {
     max-width: 600px;
 }
 
-.form-signin > div:not(.radio-field) {
+form > div:not(.radio-field) {
     display: flex;
     align-items: baseline;
 }
 
-.form-signin > div:not(.radio-field,.form-controls) > * {
+form > div:not(.radio-field,.form-controls) > * {
     flex: 50%;
 }
 
-.form-signin > div:not(.radio-field) > label {
+form > div:not(.radio-field) > label {
     height: fit-content;
 }
 
-.form-signin > div.radio-field {
+form div.radio-field {
     display: flex;
+    flex-direction: column;
     margin-bottom: 10px;
 }
 
-.form-signin > div.form-controls {
+form > div.form-controls {
     justify-content: end;
 }
 
-.form-signin > div.form-controls > * {
+form > div.form-controls > * {
     margin-left: 20px;
 }
 
 /* stile campi di input */
-.form-signin input:not([type=radio]) {
+form input:not([type=radio]),
+form select,
+form textarea {
     border: 2px solid transparent;
     outline: none;
 
@@ -45,22 +48,33 @@
     margin-bottom: 10px;
 }
 
-.form-signin input:not([type=radio]):focus {
+form input:not([type=radio]):focus,
+form select:focus,
+form textarea:focus {
     background: #e1e1e1;
 }
 
-.form-signin input:not([type=radio]).red-border {
+form input:not([type=radio]).red-border,
+form select.red-border,
+form textarea.red-border {
     border: 2px solid red;
 }
 
+form textarea {
+    height: auto;
+    min-height: 40px;
+}
+
 /* stile bottoni radio */
-.form-signin input[type=radio] {
+form input[type=radio] {
     appearance: none;   /* rimuove lo stile di base dei bottoni radio */
 
     border-radius: 50%;
     width: 20px;
     height: 20px;
-    line-height: 1.5;
+
+    position: relative; /* spostare leggermente in basso il radio visto che è più grande */
+    top: 5px;
 
     border: none;
     background: #efefef;
@@ -70,7 +84,7 @@
     margin: 0px 20px;
 }
 
-.form-signin input[type=radio]:checked {
+form input[type=radio]:checked {
     border: 6px solid #0078d6;
 }
 

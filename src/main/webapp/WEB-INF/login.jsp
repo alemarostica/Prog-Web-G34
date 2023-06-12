@@ -4,25 +4,36 @@
     <%@include file="componenti/head.html"%>
     <body>
         <%@include file="componenti/navBar.jsp"%>
+
+        <!-- TODO non dovremmo metterlo nell'head? -->
+        <link rel="stylesheet" type="text/css" href="src/main/resources/css/form.css">
+
         <fieldset>
             <legend>Accedi</legend>
-            <form action="<%= response.encodeURL("login")%>" method="post" onsubmit="return validaFormLogin(this)">
-                <label for="username">Username: </label><input type="text" id="username" name="username"><br>
-                <label for="password">Password: </label><input type="password" id="password" name="password"><br><br>
+            <form action="<%= response.encodeURL("login")%>" method="post" onsubmit="return validaFormLogin(this)" autocomplete="off">
+                <div><label for="username">Username: </label><input type="text" id="username" name="username" placeholder="Username"></div>
+                <div><label for="password">Password: </label><input type="password" id="password" name="password" placeholder="Password"></div>
 
-                <p id="erroriForm"></p><br><br>
-                <%
-                    //stampa di eventuali errori provenienti da un tentativo di login precedente
-                    if(request.getAttribute("erroreLogin") != null){
-                %>
-                <jsp:useBean id="erroreLogin" scope="request" class="com.g34.unitn.it.progwebg34.ErrorBean"/>
-                <p><%= erroreLogin.getTitle() %>: <%= erroreLogin.getMessage() %></p>
-                <%
-                    }
-                %>
 
-                <button type="submit">Invia</button>
-                <button type="reset">Reset</button>
+                <fieldset class="error-section <%= (request.getAttribute("erroreLogin") != null)? "visible" : "" %>">
+                    <legend>Errore nella procedura di registrazione</legend>
+                    <p id="erroriForm">
+                        <%
+                            //stampa di eventuali errori provenienti da un tentativo di registrazione precedente
+                            if(request.getAttribute("erroreLogin") != null){
+                        %>
+                        <jsp:useBean id="erroreLogin" scope="request" class="com.g34.unitn.it.progwebg34.ErrorBean"/>
+                        <%= erroreLogin.getTitle() %>: <%= erroreLogin.getMessage() %>
+                        <%
+                            }
+                        %>
+                    </p>
+                </fieldset>
+
+                <div class="form-controls">
+                    <button type="reset">Reset</button>
+                    <button type="submit">Invia</button>
+                </div>
             </form>
         </fieldset>
         <%@include file="componenti/frasiMotivazionali.html"%>

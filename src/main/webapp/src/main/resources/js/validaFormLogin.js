@@ -1,4 +1,5 @@
 function validaFormLogin(form) {
+    const sezioneErrori = document.getElementsByClassName("error-section")[0];
     const paragrafoErrori = document.getElementById("erroriForm");
     paragrafoErrori.innerText="";
 
@@ -17,16 +18,25 @@ function validaFormLogin(form) {
     if (username==="") {
         valido = false;
         paragrafoErrori.innerHTML += "34: il campo username deve essere compilato<br/>";
+        form.username.classList.add("red-border");
     }else if(username.length > 50){
         valido = false;
         paragrafoErrori.innerHTML += "34: la lunghezza massima per l'username è di 50 caratteri<br/>";
+        form.username.classList.add("red-border");
     }
     if (password==="") {
         valido = false;
         paragrafoErrori.innerHTML += "34: il campo password deve essere compilato<br/>";
+        form.password.classList.add("red-border");
     }else if(!/^(?=.*[dD])(?=.*[lL])(?=.*[aA])(?=.*[rR])(?=.*[A-Z])(?=.*[0-9])(?=.*[?!$]).{8}$/.test(password)){
         valido = false;
         paragrafoErrori.innerHTML += "34: la password deve essere lunga 8 caratteri, deve contenere le lettere L, D, A, R, almeno un carattere numerico, un carattere maiuscolo e un carattere tra $, ! e ?<br/>";
+        form.password.classList.add("red-border");
+    }
+
+    //se ci sono errori aggiungo la classe visible al contenitore per mostrare gli errori
+    if(!valido){
+        sezioneErrori.classList.add("visible");
     }
 
     return valido;

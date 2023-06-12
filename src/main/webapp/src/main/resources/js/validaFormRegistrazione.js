@@ -87,6 +87,7 @@ function validaFormRegistrazione(form) {
     }else if(username.length > 50){
         valido = false;
         paragrafoErrori.innerHTML += "34: la lunghezza massima per l'username è di 50 caratteri<br/>";
+        form.username.classList.add("red-border");
     }
     if (password==="") {
         valido = false;

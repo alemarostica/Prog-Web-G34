@@ -16,6 +16,8 @@ public class Contatti extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
+
         //simulare invio email
         String nome = request.getParameter("nome");
         String cognome = request.getParameter("cognome");
@@ -37,7 +39,7 @@ public class Contatti extends HttpServlet {
         request.getRequestDispatcher("WEB-INF/invioConfermato.jsp").forward(request,response);
     }
 
-        public void inviaEmail(String nome, String cognome, String mittente, String oggetto, String testo) {
+    public void inviaEmail(String nome, String cognome, String mittente, String oggetto, String testo) {
         // Dati fittizi della mail dell'associazione
         final String username = "tum4world@nessunonoluogonoesiste.com";
 
