@@ -2,7 +2,6 @@
 // mostra il popup solo alla prima visita
 if (request.getSession(false)==null || request.getSession().isNew()){
 %>
-<link rel="stylesheet" type="text/css" href="./src/main/resources/css/cookiePopup.css"/>
 
 <fieldset class="cookie">
     <legend>Informativa sui cookies</legend>

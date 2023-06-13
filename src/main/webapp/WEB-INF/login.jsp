@@ -1,12 +1,13 @@
-<%@ page import="com.g34.unitn.it.progwebg34.ErrorBean" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<!DOCTYPE html>
 <html>
-    <%@include file="componenti/head.html"%>
+    <head>
+        <%@ include file="componenti/head.html"%>
+
+        <link rel="stylesheet" type="text/css" href="css/form.css">
+    </head>
     <body>
         <%@include file="componenti/navBar.jsp"%>
-
-        <!-- TODO non dovremmo metterlo nell'head? -->
-        <link rel="stylesheet" type="text/css" href="src/main/resources/css/form.css">
 
         <fieldset>
             <legend>Accedi</legend>
@@ -42,6 +43,6 @@
         <br>
         <br>
         <%@include file="componenti/Footer.html"%>
-        <script src="src/main/resources/js/validaFormLogin.js"></script>
+        <script src="js/validaFormLogin.js"></script>
     </body>
 </html>

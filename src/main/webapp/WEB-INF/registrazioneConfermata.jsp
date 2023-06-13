@@ -1,6 +1,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<!DOCTYPE html>
 <html>
-    <%@include file="componenti/head.html"%>
+    <head>
+        <%@ include file="componenti/head.html"%>
+    </head>
     <body>
         <%@include file="componenti/navBar.jsp"%>
         <jsp:useBean id="nameBean" scope="request" class="com.g34.unitn.it.progwebg34.NameBean"/>

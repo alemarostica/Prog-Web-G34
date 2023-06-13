@@ -1,18 +1,13 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: rober
-  Date: 23/05/2023
-  Time: 15.30
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<!DOCTYPE html>
 <html>
-    <%@include file="componenti/head.html"%>
+    <head>
+        <%@ include file="componenti/head.html"%>
+
+        <link rel="stylesheet" type="text/css" href="css/form.css">
+    </head>
     <body>
         <%@include file="componenti/navBar.jsp"%>
-
-        <!-- TODO non dovremmo metterlo nell'head? -->
-        <link rel="stylesheet" type="text/css" href="src/main/resources/css/form.css">
 
         <div style="width: 100%; height: 80%">
             <div style="width: 50%; float: left">
@@ -58,6 +53,6 @@
         <br>
         <br>
         <%@include file="componenti/Footer.html"%>
-        <script src="src/main/resources/js/validaFormContatti.js"></script>
+        <script src="js/validaFormContatti.js"></script>
     </body>
 </html>
