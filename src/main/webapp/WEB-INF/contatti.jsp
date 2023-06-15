@@ -14,7 +14,7 @@
 
             <div class="scheda">
                 <h1 class="titoloScheda">Lasciaci un messaggio, ti ricontatteremo il più presto possibile</h1>
-                <div class="corpo centered">
+                <div class="corpo">
                     <form action="<%=response.encodeURL("contatti")%>" method="post" onsubmit="return validaFormContatti(this)" autocomplete="off">
                         <div><label for="nome">Nome: </label><input type="text" id="nome" name="nome" placeholder="Nome"></div>
                         <div><label for="cognome">Cognome: </label><input type="text" id="cognome" name="cognome" placeholder="Cognome"></div>

@@ -3,17 +3,20 @@
 <html>
     <head>
         <%@ include file="componenti/head.html"%>
+        <link rel="stylesheet" type="text/css" href="css/main.css"/>
     </head>
     <body>
         <%@include file="componenti/navBar.jsp"%>
-        <jsp:useBean id="nameBean" scope="request" class="com.g34.unitn.it.progwebg34.NameBean"/>
-        <p>Grazie <%=nameBean.toString()%> per esserti registrato!</p>
-        <p>Ti auguriamo una buona permanenza sul nostro sito</p>
-        <%@include file="componenti/frasiMotivazionali.html"%>
-        <br>
-        <br>
-        <br>
-        <br>
+        <div class="corpo">
+            <div class="scheda centered">
+                <jsp:useBean id="nameBean" scope="request" class="com.g34.unitn.it.progwebg34.NameBean"/>
+                <h1 class="titoloScheda">Grazie <%=nameBean.toString()%> per esserti registrato!</h1>
+                <div class="corpo centered">
+                    <p>Ti auguriamo una buona permanenza sul nostro sito</p>
+                </div>
+            </div>
+            <%@include file="componenti/frasiMotivazionali.html"%>
+        </div>
         <%@include file="componenti/Footer.html"%>
     </body>
 </html>
