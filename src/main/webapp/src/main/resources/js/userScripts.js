@@ -18,7 +18,7 @@ const stampaUtente = (idTabella, datiUtente) => {
     tabella.innerHTML = utenti;
 }
 
-function datiUtente() {
+function datiUtente(username) {
     const xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = async function() {
         if (this.readyState === 4 && this.status === 200) {
@@ -27,10 +27,18 @@ function datiUtente() {
             stampaUtente("datiUtente", data);
         }
     }
-    xmlhttp.open("GET", `datiUtente?username=ren`, true);
+    xmlhttp.open("GET", `datiUtente?username=` + username, true);
     xmlhttp.send();
 }
 
-function EliminaAccount(){
-
+function eliminaUtente(username) {
+    const xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = async function() {
+        if (this.readyState === 4 && this.status === 200) {
+            console.log(this.responseText);
+            const data = JSON.parse(this.responseText);
+        }
+    }
+    xmlhttp.open("GET", `eliminaUtente?username=` + username, true);
+    xmlhttp.send();
 }

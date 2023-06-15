@@ -19,7 +19,7 @@
     console.log(username);
 </script>
 
-<button onclick="datiUtente()">Visualizza i miei dati</button>
+<button onclick="datiUtente(username)">Visualizza i miei dati</button>
 <table id="datiUtente">
 </table>
 <br>
@@ -44,7 +44,10 @@
 <br>
 <br>
 <br>
-<button onclick="EliminaAccount()">Elimina il mio account</button>
+<a href="<%= response.encodeURL(".") + "?logout=true" %>">
+    <button onclick="eliminaUtente(username)">Elimina il mio account</button>
+</a>
+
 
 <%@ include file="componenti/frasiMotivazionali.html"%>
 <%@ include file="componenti/Footer.html"%>
