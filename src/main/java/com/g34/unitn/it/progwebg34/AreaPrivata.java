@@ -18,8 +18,7 @@ public class AreaPrivata extends HttpServlet {
             //0 -> simpatizzante, 1 -> aderente, 2 -> amministratore
             switch (user.getTipologia()) {
                 case 0:
-                    //redirect temporaneo in assenza di pagina
-                    response.sendRedirect(response.encodeRedirectURL("index.jsp"));
+                    request.getRequestDispatcher("WEB-INF/simpatizzante.jsp").forward(request,response);
                     break;
                 case 1:
                     //redirect temporaneo in assenza di pagina
