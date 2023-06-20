@@ -6,6 +6,7 @@ body {
 
 
 #navBar {
+    z-index: 10;
     height: 86px; /* altezza logo */
     position: sticky;
     top: 0;
@@ -79,7 +80,9 @@ body {
     transition: all 0.25s ease-in-out;
 }
 .scheda:hover {
-    width: calc(100% - 20px);
+    /*width: calc(100% - 20px);*/
+    transform: translate(15px, -15px);
+    box-shadow: -15px 15px #082f08;
 }
 .scheda p {
     font-size: 20px;
@@ -87,6 +90,10 @@ body {
 /* le schede e il loro tiolo vengono staggherate a destra e sinistra alternate */
 .scheda:nth-child(2n) {
     align-self: flex-end;
+}
+.scheda:nth-child(2n):hover {
+    transform: translate(-15px, -15px);
+    box-shadow: 15px 15px #082f08;
 }
 .scheda.centered {
     align-self: center;
