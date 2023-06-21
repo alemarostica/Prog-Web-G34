@@ -22,7 +22,7 @@ public class AreaPrivata extends HttpServlet {
                     break;
                 case 1:
                     //redirect temporaneo in assenza di pagina
-                    response.sendRedirect(response.encodeRedirectURL("index.jsp"));
+                    request.getRequestDispatcher("WEB-INF/aderente.jsp").forward(request,response);
                     break;
                 case 2:
                     ContatoreVisite.incrementa("areaAmministratore.jsp");
