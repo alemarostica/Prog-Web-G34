@@ -27,14 +27,16 @@
 <br>
 <br>
 <br>
-<form action="" method="POST">
-    <input type="checkbox" name="mobilitazione" value="mobilitazione" id="mobilitazione">
+<form action=<%=response.encodeURL("iscrizione")%> method="POST">
+    <input type="hidden" name="email" value="<%= user.getEmail() %>">
+
+    <input type="checkbox" name="opzione" value="1" id="mobilitazione">
     <label for="mobilitazione">Mobilitazione diretta</label><br>
 
-    <input type="checkbox" name="azione" value="azione" id="azione">
+    <input type="checkbox" name="opzione" value="2" id="azione">
     <label for="azione">Azione diretta</label><br>
 
-    <input type="checkbox" name="collaborazione" value="collaborazione" id="collaborazione">
+    <input type="checkbox" name="opzione" value="3" id="collaborazione">
     <label for="collaborazione">Collaborazione locale</label><br>
 
     <input type="submit" value="Iscriviti">
