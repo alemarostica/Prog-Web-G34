@@ -47,8 +47,6 @@
 <a href="<%= response.encodeURL(".") + "?logout=true" %>">
     <button onclick="eliminaUtente(username)">Elimina il mio account</button>
 </a>
-
-
 <%@ include file="componenti/frasiMotivazionali.html"%>
 <%@ include file="componenti/Footer.html"%>
 </body>
