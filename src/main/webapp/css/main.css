@@ -5,8 +5,9 @@ body {
 }
 
 
+/* navbar */
 #navBar {
-    z-index: 10;
+    z-index: 10; /* tieni in primo piano */
     height: 86px; /* altezza logo */
     position: sticky;
     top: 0;
@@ -17,7 +18,7 @@ body {
     align-items: center;
     box-shadow: 0px 0px 6px 0px #4f4f4f;
 }
-/* navbar */
+/* si applica a tutte e tre le sezioni della navbar */
 #navBar > div {
     height: 100%;
     display: flex;
@@ -25,6 +26,7 @@ body {
     justify-content: space-between;
     align-items: baseline;
 }
+/* stile per i tasti della navbar */
 #navBar a {
     background-color: transparent;
     font-size: 22px;
@@ -36,10 +38,12 @@ body {
     transition: background-color 0.25s ease-in-out;
     white-space: nowrap;
 }
+/* stile per i tasti della navbar quandi li hoveri */
 #navBar > div > a:hover {
     background-color: #1ad704;
 }
 
+/* eccezione per il tasti con l'immagine, a questo non serve il padding */
 #navBar > div > a:has(img) {
     padding: 0px;
 }
@@ -95,6 +99,8 @@ body {
     transform: translate(-15px, -15px);
     box-shadow: 15px 15px #082f08;
 }
+
+/* puoi aggiungere centered a una scheda per metterla al centro */
 .scheda.centered {
     align-self: center;
 }
@@ -104,6 +110,7 @@ body {
 .scheda:nth-child(2n) .titoloScheda {
     text-align: end;
 }
+/* puoi agigungere centered pure al titolo e al corpo per centrare anche quelli */
 .scheda.centered .titoloScheda {
     text-align: center;
 }
@@ -112,6 +119,7 @@ body {
     justify-content: center;
 }
 
+/* il titolo della pagina va tenuto nel div "container" altrimenti il calcolo della posizione della navbar diventa sbagliato */
 .titoloPagina {
     text-align: center;
 }
