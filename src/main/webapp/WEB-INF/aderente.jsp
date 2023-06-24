@@ -12,15 +12,27 @@
 <%@ include file="componenti/navBar.jsp"%>
 
 <jsp:useBean id="user" class="com.g34.unitn.it.progwebg34.UserBean" scope="session"></jsp:useBean>
-<p>Benvenuto <%=user.getUsername()%></p>
-
 <script>
     let username = '<jsp:getProperty name="user" property="username"/>';
-    console.log(username);
-</script>
 
-<button onclick="datiUtente(username)">Visualizza i miei dati</button>
-<table id="datiUtente">
+    function mostraDati() {
+        let tabella = document.getElementById("tabellaDati");
+        tabella.style.display = "table";
+    }
+</script>
+<p>Benvenuto <%=user.getUsername()%></p>
+
+<button onclick="mostraDati()">Visualizza i miei dati</button>
+<table id="tabellaDati" style="display: none">
+    <tr><th>username</th><th>nome</th><th>cognome</th><th>data nascita</th><th>email</th><th>telefono</th></tr>
+    <tr>
+        <td><jsp:getProperty name="user" property="username"/></td>
+        <td><jsp:getProperty name="user" property="nome"/></td>
+        <td><jsp:getProperty name="user" property="cognome"/></td>
+        <td><jsp:getProperty name="user" property="dataNascita"/></td>
+        <td><jsp:getProperty name="user" property="email"/></td>
+        <td><jsp:getProperty name="user" property="telefono"/></td>
+    </tr>
 </table>
 <br>
 <br>
