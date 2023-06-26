@@ -21,7 +21,6 @@ public class AreaPrivata extends HttpServlet {
                     request.getRequestDispatcher("WEB-INF/simpatizzante.jsp").forward(request,response);
                     break;
                 case 1:
-                    //redirect temporaneo in assenza di pagina
                     request.getRequestDispatcher("WEB-INF/aderente.jsp").forward(request,response);
                     break;
                 case 2:

@@ -4,6 +4,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.sql.*;
@@ -26,6 +27,21 @@ public class Iscrizione extends HttpServlet {
     }
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String mail = request.getParameter("email");
+        String query = "SELECT ATTIVITA FROM ISCRIZIONE WHERE EMAILUTENTE = '" + mail + "'";
+
+        try{
+            PreparedStatement s = connection.prepareStatement(query);
+            ResultSet rs = s.executeQuery();
+
+            request.setAttribute("checkboxDisable", rs.toString());
+            //RequestDispatcher dispatcher = request.getRequestDispatcher("aderente.jsp");
+            //dispatcher.forward(request, response);
+            //response.sendRedirect("index.jsp");
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
