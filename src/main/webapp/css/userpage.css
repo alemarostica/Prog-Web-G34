@@ -19,6 +19,10 @@ button:hover {
     background-color: #1ad704;
 }
 
+button:active {
+    background-color: #1ca107;
+}
+
 input[type=submit] {
     border: none;
     outline: none;
@@ -40,6 +44,10 @@ input:hover {
     background-color: #1ad704;
 }
 
+input:active {
+    background-color: #1ca107;
+}
+
 .userContainer {
     min-height: calc(100vh - 50px - 86px - 20px - 101px);
     width: 80%;
@@ -55,4 +63,8 @@ input:hover {
     text-align: center;
     font-size: 48px;
     font-weight: bold;
+}
+
+input[type=checkbox] {
+
 }

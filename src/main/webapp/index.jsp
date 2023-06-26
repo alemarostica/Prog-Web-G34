@@ -4,6 +4,7 @@
 <head>
     <%@ include file="WEB-INF/componenti/head.html"%>
     <link rel="stylesheet" type="text/css" href="css/main.css"/>
+    <title>Home - Tum4World</title>
 </head>
 <body>
 <%@include file="WEB-INF/componenti/navBar.jsp"%>
@@ -23,7 +24,7 @@
     <div class="scheda">
         <h1 class="titoloScheda">Scarica il nostro volantino</h1>
         <a href="pdf/volantino.pdf" download>
-            <button id="downloadButton">Download
+            <button class="downloadButton" id="downloadButton">
                 <img src="images/downloadicon.png" width="35" height="35"/>
             </button>
         </a>

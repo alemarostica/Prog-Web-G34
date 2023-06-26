@@ -54,13 +54,13 @@
                     <input type="hidden" name="email" value="<%= user.getEmail() %>">
 
                     <input type="checkbox" name="opzione" value="1" id="mobilitazione">
-                    <label for="mobilitazione">Mobilitazione diretta</label><br>
+                    <label for="mobilitazione">Mobilitazione diretta</label><br/>
 
                     <input type="checkbox" name="opzione" value="2" id="azione">
-                    <label for="azione">Azione diretta</label><br>
+                    <label for="azione">Azione diretta</label><br/>
 
                     <input type="checkbox" name="opzione" value="3" id="collaborazione">
-                    <label for="collaborazione">Collaborazione locale</label><br>
+                    <label for="collaborazione">Collaborazione locale</label><br/><br/>
 
                     <input type="submit" value="Iscriviti">
                 </form>

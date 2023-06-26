@@ -146,9 +146,27 @@ body {
     height: auto;
 }
 
+.downloadButton {
+    border: none;
+    outline: none;
+    cursor: pointer;
 
+    font-size: 20px;
+    line-height: 1.5;
+    text-anchor: middle;
 
-#downloadButton {
-    font-size: 30px;
-    border-radius: 12px;
+    display: inline-block;
+    background: #91ef91;
+    height: 40px;
+    border-radius: 8px;
+    padding: 0 20px;
+    margin-bottom: 10px;
+}
+
+.downloadButton:hover {
+    background: #1ad704;
+}
+
+.downloadButton:active {
+    background: #1ca107;
 }
