@@ -33,8 +33,10 @@ public class Iscrizione extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         UserBean user = (UserBean) request.getSession().getAttribute("user");
         String[] opzioniSelezionate = request.getParameterValues("opzione");
-        if (user == null) return;
-        if (opzioniSelezionate==null) return;
+        if (user == null || opzioniSelezionate==null){
+            response.sendRedirect(response.encodeRedirectURL("areaPrivata"));
+            return;
+        }
 
         String mail = user.getEmail();
 

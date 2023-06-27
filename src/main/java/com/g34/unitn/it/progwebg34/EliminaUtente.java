@@ -29,7 +29,10 @@ public class EliminaUtente extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         UserBean utente = (UserBean) request.getSession().getAttribute("user");
-        if (utente==null) return;
+        if (utente==null) {
+            request.getRequestDispatcher(response.encodeRedirectURL("index.jsp?logout=true")).forward(request,response);
+            return;
+        }
         String username = utente.getUsername();
 
         //scelta della query in base alla tipologia richiesta
