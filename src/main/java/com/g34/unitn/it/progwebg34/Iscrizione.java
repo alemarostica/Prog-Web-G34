@@ -32,9 +32,11 @@ public class Iscrizione extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         UserBean user = (UserBean) request.getSession().getAttribute("user");
-        if (user == null) return;
-        String mail = user.getEmail();
         String[] opzioniSelezionate = request.getParameterValues("opzione");
+        if (user == null) return;
+        if (opzioniSelezionate==null) return;
+
+        String mail = user.getEmail();
 
         // Crea la tua query di inserimento utilizzando i valori selezionati
         String query = "INSERT INTO ISCRIZIONE (EMAILUTENTE, ATTIVITA, DATA) VALUES (?, ?, ?)";
