@@ -28,18 +28,21 @@ public class EliminaUtente extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String username = request.getParameter("username");
+        UserBean utente = (UserBean) request.getSession().getAttribute("user");
+        if (utente==null) return;
+        String username = utente.getUsername();
 
         //scelta della query in base alla tipologia richiesta
-        String query = "DELETE FROM ISCRITTO WHERE USERNAME ='" + username + "'";
+        String query = "DELETE FROM ISCRITTO WHERE USERNAME = ?";
 
         try {
             PreparedStatement s = connection.prepareStatement(query);
+            s.setString(1,username);
             s.executeUpdate();
         }catch (SQLException e) {
             e.printStackTrace();
         }
-
+        request.getRequestDispatcher(response.encodeRedirectURL("index.jsp?logout=true")).forward(request,response);
     }
 
     @Override

@@ -27,50 +27,30 @@ public class Iscrizione extends HttpServlet {
     }
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String mail = request.getParameter("email");
-        String query = "SELECT ATTIVITA FROM ISCRIZIONE WHERE EMAILUTENTE = '" + mail + "'";
-
-        try{
-            PreparedStatement s = connection.prepareStatement(query);
-            ResultSet rs = s.executeQuery();
-
-            request.setAttribute("checkboxDisable", rs.toString());
-            //RequestDispatcher dispatcher = request.getRequestDispatcher("aderente.jsp");
-            //dispatcher.forward(request, response);
-            //response.sendRedirect("index.jsp");
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String mail = request.getParameter("email");
+        UserBean user = (UserBean) request.getSession().getAttribute("user");
+        if (user == null) return;
+        String mail = user.getEmail();
         String[] opzioniSelezionate = request.getParameterValues("opzione");
 
         // Crea la tua query di inserimento utilizzando i valori selezionati
-        StringBuilder query = new StringBuilder("INSERT INTO ISCRIZIONE (EMAILUTENTE, ATTIVITA, DATA) VALUES ('" + mail + "',");
-        StringBuilder opz = new StringBuilder("");
-        for (int i = 0; i < opzioniSelezionate.length; i++) {
-            opz.append(opzioniSelezionate[i]);
-        }
-        query.append(opz + ", '");
-        query.append(LocalDate.now() + "')");
-        System.out.println(query);
-
-
-        try{
-        //String query = "INSERT INTO ISCRIZIONE (EMAILUTENTE, ATTIVITA, DATA) VALUES (?, ?, ?)";
-        //s.executeUpdate();
-            PreparedStatement s = connection.prepareStatement(query.toString());
-            s.executeUpdate();
-            //response.sendRedirect("index.jsp");
-
-        } catch (SQLException e) {
+        String query = "INSERT INTO ISCRIZIONE (EMAILUTENTE, ATTIVITA, DATA) VALUES (?, ?, ?)";
+        try {
+            PreparedStatement ps = connection.prepareStatement(query);
+            ps.setString(1, mail);
+            ps.setString(3, LocalDate.now().toString());
+            for (int i = 0; i < opzioniSelezionate.length; i++) {
+                ps.setString(2, opzioniSelezionate[i]);
+                ps.executeUpdate();
+            }
+        }catch (SQLException e) {
             e.printStackTrace();
         }
-        response.sendRedirect("index.jsp");
+
+        response.sendRedirect(response.encodeRedirectURL("areaPrivata"));
     }
 
     @Override
