@@ -7,7 +7,10 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-<%@ include file="componenti/head.html"%>
+<head>
+    <%@ include file="componenti/head.html"%>
+    <script src="src/main/resources/js/userScripts.js"></script>
+</head>
 <body>
 <%@ include file="componenti/navBar.jsp"%>
 <%@ include file="componenti/users.jsp"%>
