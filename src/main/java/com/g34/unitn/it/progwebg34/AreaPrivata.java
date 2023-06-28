@@ -4,9 +4,23 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
+import java.sql.*;
 
 @WebServlet(name = "areaPrivata", value = "/areaPrivata")
 public class AreaPrivata extends HttpServlet {
+    String url = "jdbc:derby://localhost:1527/Tum4WorldDB34";
+    Connection connection = null;
+
+    @Override
+    public void init() {
+        //COLLEGAMENTO AL DATABASE
+        try {
+            Class.forName("org.apache.derby.jdbc.ClientDriver");
+            connection = DriverManager.getConnection(url);
+        } catch (ClassNotFoundException | NullPointerException | SQLException e) {
+            e.printStackTrace();
+        }
+    }
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession sessione = request.getSession();
@@ -16,14 +30,26 @@ public class AreaPrivata extends HttpServlet {
             response.sendRedirect(response.encodeRedirectURL("index.jsp"));
         }else{
             //0 -> simpatizzante, 1 -> aderente, 2 -> amministratore
+            if (user.getTipologia()==0 || user.getTipologia()==1) {
+                String query = "SELECT ATTIVITA FROM ISCRIZIONE WHERE EMAILUTENTE = ?";
+                try{
+                    PreparedStatement s = connection.prepareStatement(query);
+                    s.setString(1, user.getEmail());
+                    ResultSet rs = s.executeQuery();
+
+                    while (rs.next()) {
+                        request.setAttribute("iscrizione"+rs.getString("ATTIVITA"), new AttivitaBean(true));
+                    }
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
             switch (user.getTipologia()) {
                 case 0:
-                    //redirect temporaneo in assenza di pagina
-                    response.sendRedirect(response.encodeRedirectURL("index.jsp"));
+                    request.getRequestDispatcher("WEB-INF/simpatizzante.jsp").forward(request,response);
                     break;
                 case 1:
-                    //redirect temporaneo in assenza di pagina
-                    response.sendRedirect(response.encodeRedirectURL("index.jsp"));
+                    request.getRequestDispatcher("WEB-INF/aderente.jsp").forward(request,response);
                     break;
                 case 2:
                     ContatoreVisite.incrementa("areaAmministratore.jsp");
@@ -37,5 +63,15 @@ public class AreaPrivata extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+    }
+
+    @Override
+    public void destroy() {
+        //CHIUSURA CONNESSIONE
+        try {
+            connection.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }
