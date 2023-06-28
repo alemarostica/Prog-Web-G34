@@ -15,7 +15,7 @@ import java.io.*;
 import java.util.Random;
 
 @WebServlet(name = "frasiMotivazionali", value = "/frasiMotivazionali")
-public class FrasiMotivazionali extends HttpServlet {
+public class FrasiMotivazionali extends HttpServletDB {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // Prende un parametro i per evitare di dare la stessa frase 2 volte di fila

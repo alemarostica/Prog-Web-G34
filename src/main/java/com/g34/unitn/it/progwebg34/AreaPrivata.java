@@ -7,20 +7,7 @@ import java.io.IOException;
 import java.sql.*;
 
 @WebServlet(name = "areaPrivata", value = "/areaPrivata")
-public class AreaPrivata extends HttpServlet {
-    String url = "jdbc:derby://localhost:1527/Tum4WorldDB34";
-    Connection connection = null;
-
-    @Override
-    public void init() {
-        //COLLEGAMENTO AL DATABASE
-        try {
-            Class.forName("org.apache.derby.jdbc.ClientDriver");
-            connection = DriverManager.getConnection(url);
-        } catch (ClassNotFoundException | NullPointerException | SQLException e) {
-            e.printStackTrace();
-        }
-    }
+public class AreaPrivata extends HttpServletDB {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession sessione = request.getSession();
@@ -63,15 +50,5 @@ public class AreaPrivata extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-    }
-
-    @Override
-    public void destroy() {
-        //CHIUSURA CONNESSIONE
-        try {
-            connection.close();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
     }
 }

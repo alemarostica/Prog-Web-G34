@@ -10,7 +10,7 @@ import java.util.HashMap;
 import com.google.gson.Gson;
 
 @WebServlet(name = "VisitePagine", value = "/visitePagine")
-public class VisitePagine extends HttpServlet {
+public class VisitePagine extends HttpServletDB {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HashMap<String, Integer> contatori = ContatoreVisite.getContatori();

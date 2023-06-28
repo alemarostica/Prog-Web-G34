@@ -13,21 +13,7 @@ import java.text.SimpleDateFormat;
 import java.util.Locale;
 
 @WebServlet(name = "Signin", value = "/signin")
-public class Signin extends HttpServlet {
-    String url = "jdbc:derby://localhost:1527/Tum4WorldDB34";
-    Connection connection = null;
-
-    @Override
-    public void init() {
-        //COLLEGAMENTO AL DATABASE
-        try {
-            Class.forName("org.apache.derby.jdbc.ClientDriver");
-            connection = DriverManager.getConnection(url);
-        } catch (ClassNotFoundException | NullPointerException | SQLException e) {
-            e.printStackTrace();
-        }
-    }
-
+public class Signin extends HttpServletDB {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         //forward alla jsp con il form della registrazione
@@ -121,16 +107,6 @@ public class Signin extends HttpServlet {
 
             ContatoreVisite.incrementa("signin.jsp");
             request.getRequestDispatcher("WEB-INF/signin.jsp").forward(request,response);
-        }
-    }
-
-    @Override
-    public void destroy() {
-        //CHIUSURA CONNESSIONE
-        try {
-            connection.close();
-        } catch (SQLException e) {
-            e.printStackTrace();
         }
     }
 }

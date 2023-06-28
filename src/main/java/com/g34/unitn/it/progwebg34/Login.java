@@ -7,21 +7,7 @@ import java.io.IOException;
 import java.sql.*;
 
 @WebServlet(name = "Login", value = "/login")
-public class Login extends HttpServlet {
-    String url = "jdbc:derby://localhost:1527/Tum4WorldDB34";
-    Connection connection = null;
-
-    @Override
-    public void init() {
-        //COLLEGAMENTO AL DATABASE
-        try {
-            Class.forName("org.apache.derby.jdbc.ClientDriver");
-            connection = DriverManager.getConnection(url);
-        } catch (ClassNotFoundException | NullPointerException | SQLException e) {
-            e.printStackTrace();
-        }
-    }
-
+public class Login extends HttpServletDB {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         //verifico se l'utente è già loggato oppure no
@@ -104,16 +90,6 @@ public class Login extends HttpServlet {
 
             ContatoreVisite.incrementa("login.jsp");
             request.getRequestDispatcher("WEB-INF/login.jsp").forward(request,response);
-        }
-    }
-
-    @Override
-    public void destroy() {
-        //CHIUSURA CONNESSIONE
-        try {
-            connection.close();
-        } catch (SQLException e) {
-            e.printStackTrace();
         }
     }
 }

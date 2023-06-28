@@ -10,21 +10,7 @@ import java.time.LocalTime;
 import java.sql.*;
 
 @WebServlet(name = "Iscrizione", value = "/iscrizione")
-public class Iscrizione extends HttpServlet {
-
-    String url = "jdbc:derby://localhost:1527/Tum4WorldDB34";
-    Connection connection = null;
-
-    @Override
-    public void init() {
-        //COLLEGAMENTO AL DATABASE
-        try {
-            Class.forName("org.apache.derby.jdbc.ClientDriver");
-            connection = DriverManager.getConnection(url);
-        } catch (ClassNotFoundException | NullPointerException | SQLException e) {
-            e.printStackTrace();
-        }
-    }
+public class Iscrizione extends HttpServletDB {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     }
@@ -56,15 +42,4 @@ public class Iscrizione extends HttpServlet {
 
         response.sendRedirect(response.encodeRedirectURL("areaPrivata"));
     }
-
-    @Override
-    public void destroy() {
-        //CHIUSURA CONNESSIONE
-        try {
-            connection.close();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
-
 }

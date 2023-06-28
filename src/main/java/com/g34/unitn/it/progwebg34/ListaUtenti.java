@@ -11,21 +11,7 @@ import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 
 @WebServlet(name = "ListaUtenti", value = "/listaUtenti")
-public class ListaUtenti extends HttpServlet {
-    String url = "jdbc:derby://localhost:1527/Tum4WorldDB34";
-    Connection connection = null;
-
-    @Override
-    public void init() {
-        //COLLEGAMENTO AL DATABASE
-        try {
-            Class.forName("org.apache.derby.jdbc.ClientDriver");
-            connection = DriverManager.getConnection(url);
-        } catch (ClassNotFoundException | NullPointerException | SQLException e) {
-            e.printStackTrace();
-        }
-    }
-
+public class ListaUtenti extends HttpServletDB {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         //prelevo dalla richiesta la tipologia di utenti da restituire
@@ -83,15 +69,5 @@ public class ListaUtenti extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-    }
-
-    @Override
-    public void destroy() {
-        //CHIUSURA CONNESSIONE
-        try {
-            connection.close();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
     }
 }
