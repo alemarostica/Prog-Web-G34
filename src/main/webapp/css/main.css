@@ -1,0 +1,172 @@
+body {
+    background: rgb(191, 255, 197);
+    margin: 0px;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+/* navbar */
+#navBar {
+    z-index: 10; /* tieni in primo piano */
+    height: 86px; /* altezza logo */
+    position: sticky;
+    top: 0;
+    background-color: rgb(158, 245, 165);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 0px 6px 0px #4f4f4f;
+}
+/* si applica a tutte e tre le sezioni della navbar */
+#navBar > div {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+}
+/* stile per i tasti della navbar */
+#navBar a {
+    background-color: transparent;
+    font-size: 22px;
+    padding: 30px 30px;
+    /*font-weight: bold;
+    text-decoration-thickness: 2px;*/
+    text-decoration: none;
+    color: black;
+    transition: background-color 0.25s ease-in-out;
+    white-space: nowrap;
+}
+/* stile per i tasti della navbar quandi li hoveri */
+#navBar > div > a:hover {
+    background-color: #1ad704;
+}
+
+/* eccezione per il tasti con l'immagine, a questo non serve il padding */
+#navBar > div > a:has(img) {
+    padding: 0px;
+}
+
+/* footer */
+#footer {
+    text-align: center;
+    width: 100%;
+    background-color: rgb(158, 245, 165);
+    line-height: 50px;
+    height: fit-content;
+    box-shadow: 0px 2px 11px 0px #4f4f4f;
+}
+#footer p {
+    margin: 0px;
+}
+
+
+/*il container principale della pagina*/
+.container {
+    /*100 - footer - navbar - padding*/
+    min-height: calc(100vh - 50px - 86px - 20px);
+    width: 80%;
+    margin: auto;
+    background-color: rgb(222,255,222);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+}
+
+/*Le schede hanno un titolo e un corpo*/
+.scheda {
+    width: 90%;
+    background-color: rgb(191, 255, 197);
+    padding: 10px;
+    align-self: flex-start;
+    transition: all 0.25s ease-in-out;
+}
+.scheda:hover {
+    /*width: calc(100% - 20px);*/
+    transform: translate(15px, -15px);
+    box-shadow: -15px 15px #082f08;
+}
+.scheda p {
+    font-size: 20px;
+}
+/* le schede e il loro tiolo vengono staggherate a destra e sinistra alternate */
+.scheda:nth-child(2n) {
+    align-self: flex-end;
+}
+.scheda:nth-child(2n):hover {
+    transform: translate(-15px, -15px);
+    box-shadow: 15px 15px #082f08;
+}
+
+/* puoi aggiungere centered a una scheda per metterla al centro */
+.scheda.centered {
+    align-self: center;
+}
+.titoloScheda {
+    text-align: initial;
+}
+.scheda:nth-child(2n) .titoloScheda {
+    text-align: end;
+}
+/* puoi agigungere centered pure al titolo e al corpo per centrare anche quelli */
+.scheda.centered .titoloScheda {
+    text-align: center;
+}
+.corpo.centered {
+    text-align: center;
+    justify-content: center;
+}
+
+/* il titolo della pagina va tenuto nel div "container" altrimenti il calcolo della posizione della navbar diventa sbagliato */
+.titoloPagina {
+    text-align: center;
+}
+
+/* gli elementi del corpo di una scheda sono disposti orizzontalmente */
+/* le immagini prendono il 20% del corpo e sono centrate verticalmente (vanno messe in un wrapper)*/
+.corpo {
+    display: flex;
+    flex-direction: row;
+}
+.scheda.centered .corpo {
+    justify-content: center;
+}
+.corpo * {
+    flex: 1;
+}
+.imgWrap {
+    width: 30%;
+    flex: unset;
+    align-self: center;
+}
+.imgWrap img {
+    width: 100%;
+    height: auto;
+}
+
+.downloadButton {
+    border: none;
+    outline: none;
+    cursor: pointer;
+
+    font-size: 20px;
+    line-height: 1.5;
+    text-anchor: middle;
+
+    display: inline-block;
+    background: #91ef91;
+    height: 40px;
+    border-radius: 8px;
+    padding: 0 20px;
+    margin-bottom: 10px;
+}
+
+.downloadButton:hover {
+    background: #1ad704;
+}
+
+.downloadButton:active {
+    background: #1ca107;
+}

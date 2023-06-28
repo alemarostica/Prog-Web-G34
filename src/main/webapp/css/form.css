@@ -130,7 +130,23 @@ form input[type=radio]:checked {
     margin-bottom: 10px;
 }
 
+.form-controls > button:hover {
+    background: #c0c0c0;
+}
+
 .form-controls > button[type=submit] {
     background-color: #91ef91;
     font-weight: bold;
+}
+
+.form-controls > button[type=submit]:hover {
+    background: #1ad704;
+}
+
+.form-controls > button[type=submit]:active {
+    background: #1ca107;
+}
+
+.form-controls > button:active {
+    background: #9d9d9d;
 }

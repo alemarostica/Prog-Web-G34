@@ -1,16 +1,21 @@
-<fieldset>
-    <legend>navBar</legend>
-    <a href="<%= response.encodeURL("index.jsp")%>"><img class="logo" src="images/logo.png" alt="logo"></a>
-    <a href="<%= response.encodeURL("chisiamo.jsp")%>">Chi Siamo</a>
-    <a href="<%= response.encodeURL("attivita.jsp")%>">Attività</a>
-    <a href="<%= response.encodeURL("contatti")%>">Contatti</a>
+<div id="navBar">
+    <div id="navbarLeft">
+        <a href="<%= response.encodeURL("index.jsp")%>"><img class="logo" src="images/logo.png" alt="logo"></a>
+    </div>
+    <div id="navbarCenter">
+        <a href="<%= response.encodeURL("chisiamo.jsp")%>">CHI SIAMO</a>
+        <a href="<%= response.encodeURL("attivita.jsp")%>">ATTIVITÀ</a>
+        <a href="<%= response.encodeURL("contatti")%>">CONTATTI</a>
+    </div>
+    <div id="navbarRight">
     <%
         if (request.getSession().getAttribute("user") == null) {
     %>
-        <a href="<%= response.encodeURL("signin")%>"><button>Sign in</button></a>
-        <a href="<%= response.encodeURL("login")%>"><button>Log in</button></a>
+        <a href="<%= response.encodeURL("signin")%>">SIGN IN</a>
+        <a href="<%= response.encodeURL("login")%>">LOG IN</a>
     <%}else{%>
-        <a href="<%=response.encodeURL("areaPrivata")%>"><button>Area Privata</button></a>
-        <a href="<%= response.encodeURL(".") + "?logout=true" %>"><button>Log out</button></a>
+        <a href="<%=response.encodeURL("areaPrivata")%>">Area Privata</a>
+        <a href="<%= response.encodeURL(".") + "?logout=true" %>">Log out</a>
     <%}%>
-</fieldset>
+    </div>
+</div>
