@@ -35,6 +35,7 @@
             </div>
 
             <div class="scheda centered">
+                <div class="title"><h3>Dati account</h3></div>
                 <div class="buttonContainer"><button onclick="mostraDati()">Visualizza i miei dati</button></div>
                 <table id="tabellaDati" style="display: none">
                     <thead><tr><th>Username</th><th>Nome</th><th>Cognome</th><th>Data di nascita</th><th>Email</th><th>Telefono</th></tr></thead>
@@ -52,27 +53,32 @@
             </div>
 
             <div class="scheda centered">
+                <div class="title"><h3>Iscrizione attività</h3></div>
                 <form action=<%=response.encodeURL("iscrizione")%> method="POST">
-                    <input type="hidden" name="email" value="<%= user.getEmail() %>">
+                    <input type="hidden" name="email" value="<%= user.getEmail() %>"/>
 
-                    <input type="checkbox" name="opzione" value="1" id="mobilitazione">
-                    <label for="mobilitazione">Mobilitazione diretta</label><br/>
+                    <input type="checkbox" name="opzione" value="1" id="mobilitazione"/>
+                    <label for="mobilitazione">Mobilitazione risorse</label>
+                    <a href="divulgazione.jsp"><img width="15" height="15" src="images/redirect.png" alt="redirect"/></a><br/>
 
-                    <input type="checkbox" name="opzione" value="2" id="azione">
-                    <label for="azione">Azione diretta</label><br/>
+                    <input type="checkbox" name="opzione" value="2" id="azione"/>
+                    <label for="azione">Azione diretta</label>
+                    <a href="azionediretta.jsp"><img width="15" height="15" src="images/redirect.png" alt="redirect" ></a><br/>
 
-                    <input type="checkbox" name="opzione" value="3" id="collaborazione">
-                    <label for="collaborazione">Collaborazione locale</label><br/><br/>
+                    <input type="checkbox" name="opzione" value="3" id="collaborazione"/>
+                    <label for="collaborazione">Collaborazione locale</label>
+                    <a href="collaborazione.jsp"><img width="15" height="15" src="images/redirect.png" alt="redirect" ></a><br/><br/>
 
-                    <input type="submit" value="Iscriviti">
+                    <div class="submitButton"><input type="submit" value="Iscriviti"/></div>
                 </form>
             </div>
 
             <div class="scheda centered">
+                <div class="title"><h3>Donazioni</h3></div>
                 <form action=<%=response.encodeURL("donazione")%> method="POST">
-                    <input type="hidden" name="email" value="<%= user.getEmail() %>">
-                    <input type="number" name="donazione" id="donazione">
-                    <input type="submit" value="Dona">
+                    <input type="hidden" name="email" value="<%= user.getEmail() %>"/>
+                    <div class="submitButton"><input type="number" name="donazione" id="donazione"/></div><br/>
+                    <div class="submitButton"><input type="submit" value="Dona"/></div>
                 </form>
             </div>
 

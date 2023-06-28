@@ -54,12 +54,17 @@ input[type=submit] {
     font-weight: bold;
 }
 
-input:hover {
+input[type=submit]:hover {
     background-color: #1ad704;
 }
 
-input:active {
+input[type=submit]:active {
     background-color: #1ca107;
+}
+
+.submitButton {
+    display: flex;
+    justify-content: center;
 }
 
 .userContainer {
@@ -86,4 +91,59 @@ input[type=checkbox] {
 .buttonContainer {
     display: flex;
     justify-content: center;
+}
+
+input[type=checkbox] + label {
+    display: inline-block;
+    margin: 0.3em;
+    cursor: pointer;
+    padding: 0.2em;
+}
+
+input[type=checkbox] {
+    display: none;
+}
+
+input[type=checkbox] + label:before {
+    content: "\2714";
+    border: 0.1em solid #000;
+    border-radius: 0.2em;
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    padding-left: 0.2em;
+    padding-bottom: 0.3em;
+    margin-right: 0.2em;
+    vertical-align: bottom;
+    color: transparent;
+    transition: .2s;
+}
+
+input[type=checkbox] + label:active:before {
+    transform: scale(0);
+}
+
+input[type=checkbox]:checked + label:before {
+    background-color: #1ad704;
+    border-color: #1ad704;
+    color: #fff;
+}
+
+input[type=checkbox]:disabled + label:before {
+    transform: scale(1);
+    border-color: #aaa;
+}
+
+input[type=checkbox]:checked:disabled + label:before {
+    transform: scale(1);
+    background-color: #1ad704;
+    border-color: #1ad704;
+}
+
+img {
+    display: inline-block;
+}
+
+.title {
+    text-align: center;
 }
