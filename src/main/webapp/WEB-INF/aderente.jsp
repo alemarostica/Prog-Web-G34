@@ -9,19 +9,24 @@
 <html>
 <head>
     <%@ include file="componenti/head.html"%>
-    <script src="src/main/resources/js/userScripts.js"></script>
+    <script src="js/userScripts.js"></script>
+    <link rel="stylesheet" href="css/main.css" type="text/css"/>
+    <link rel="stylesheet" href="css/userpage.css" type="text/css"/>
 </head>
 <body>
 <%@ include file="componenti/navBar.jsp"%>
-<%@ include file="componenti/users.jsp"%>
+<div class="container">
+    <%@ include file="componenti/users.jsp"%>
 
-<form action=<%=response.encodeURL("donazione")%> method="POST">
-    <input type="hidden" name="email" value="<%= user.getEmail() %>">
-    <input type="number" name="donazione" id="donazione">
-    <input type="submit" value="Dona">
-</form>
+    <form action=<%=response.encodeURL("donazione")%> method="POST">
+        <input type="hidden" name="email" value="<%= user.getEmail() %>">
+        <input type="number" name="donazione" id="donazione">
+        <input type="submit" value="Dona">
+    </form>
 
-<%@ include file="componenti/frasiMotivazionali.html"%>
+    <%@ include file="componenti/frasiMotivazionali.html"%>
+</div>
+
 <%@ include file="componenti/Footer.html"%>
 </body>
 </html>

@@ -5,8 +5,8 @@
 <p>Benvenuto <jsp:getProperty name="user" property="nome"/></p>
 
 <button onclick="mostraDati()">Visualizza i miei dati</button>
-<table id="tabellaDati" style="display: none">
-  <tr><th>username</th><th>nome</th><th>cognome</th><th>data nascita</th><th>email</th><th>telefono</th></tr>
+<table class="hiddenTable" id="tabellaDati">
+  <tr><th>Username</th><th>Nome</th><th>Cognome</th><th>Data di nascita</th><th>Email</th><th>Telefono</th></tr>
   <tr>
     <td><jsp:getProperty name="user" property="username"/></td>
     <td><jsp:getProperty name="user" property="nome"/></td>

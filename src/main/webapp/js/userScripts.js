@@ -7,5 +7,5 @@ function eliminaUtente() {
 
 function mostraDati() {
     let tabella = document.getElementById("tabellaDati");
-    tabella.style.display = "table";
+    tabella.classList.remove("hiddenTable");
 }

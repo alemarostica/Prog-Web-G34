@@ -170,3 +170,7 @@ body {
 .downloadButton:active {
     background: #1ca107;
 }
+
+.hiddenTable {
+    display: none;
+}

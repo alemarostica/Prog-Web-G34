@@ -28,10 +28,6 @@ function validaFormLogin(form) {
         valido = false;
         paragrafoErrori.innerHTML += "34: il campo password deve essere compilato<br/>";
         form.password.classList.add("red-border");
-    }else if(!/^(?=.*[dD])(?=.*[lL])(?=.*[aA])(?=.*[rR])(?=.*[A-Z])(?=.*[0-9])(?=.*[?!$]).{8}$/.test(password)){
-        valido = false;
-        paragrafoErrori.innerHTML += "34: la password deve essere lunga 8 caratteri, deve contenere le lettere L, D, A, R, almeno un carattere numerico, un carattere maiuscolo e un carattere tra $, ! e ?<br/>";
-        form.password.classList.add("red-border");
     }
 
     //se ci sono errori aggiungo la classe visible al contenitore per mostrare gli errori
