@@ -45,7 +45,8 @@ public class EliminaUtente extends HttpServlet {
         }catch (SQLException e) {
             e.printStackTrace();
         }
-        request.getRequestDispatcher(response.encodeRedirectURL("index.jsp?logout=true")).forward(request,response);
+        //request.getRequestDispatcher(response.encodeRedirectURL("index.jsp?logout=true")).forward(request,response);
+        response.sendRedirect(response.encodeRedirectURL("index.jsp?logout=true"));
     }
 
     @Override

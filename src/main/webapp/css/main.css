@@ -83,7 +83,7 @@ body {
     align-self: flex-start;
     transition: all 0.25s ease-in-out;
 }
-.scheda:hover {
+.scheda:not(:has(input):has(button)):hover {
     /*width: calc(100% - 20px);*/
     transform: translate(15px, -15px);
     box-shadow: -15px 15px #082f08;
@@ -95,7 +95,7 @@ body {
 .scheda:nth-child(2n) {
     align-self: flex-end;
 }
-.scheda:nth-child(2n):hover {
+.scheda:nth-child(2n):not(:has(input):has(button)):hover {
     transform: translate(-15px, -15px);
     box-shadow: 15px 15px #082f08;
 }

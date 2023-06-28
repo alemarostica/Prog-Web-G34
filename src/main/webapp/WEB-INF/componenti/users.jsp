@@ -38,4 +38,6 @@
 <br>
 <br>
 <br>
-<button onclick="eliminaUtente()">Elimina il mio account</button>
+<form action="eliminaUtente" onsubmit="return confermaEliminaUtente()" method="GET">
+  <input type="submit" value="Elimina Il Mio Account">
+</form>

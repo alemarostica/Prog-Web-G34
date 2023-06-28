@@ -1,8 +1,5 @@
-function eliminaUtente() {
-    if (!window.confirm("Sei sicuro?\nTutti i tuoi dati andranno persi.")) return;
-    const xmlhttp = new XMLHttpRequest();
-    xmlhttp.open("GET", 'eliminaUtente', true);
-    xmlhttp.send();
+function confermaEliminaUtente() {
+    return window.confirm("Sei sicuro?\nTutti i tuoi dati andranno persi.");
 }
 
 function mostraDati() {
