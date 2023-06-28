@@ -35,17 +35,19 @@
             </div>
 
             <div class="scheda centered">
-                <button onclick="mostraDati()">Visualizza i miei dati</button>
+                <div class="buttonContainer"><button onclick="mostraDati()">Visualizza i miei dati</button></div>
                 <table id="tabellaDati" style="display: none">
-                    <tr><th>username</th><th>nome</th><th>cognome</th><th>data nascita</th><th>email</th><th>telefono</th></tr>
-                    <tr>
-                        <td><jsp:getProperty name="user" property="username"/></td>
-                        <td><jsp:getProperty name="user" property="nome"/></td>
-                        <td><jsp:getProperty name="user" property="cognome"/></td>
-                        <td><jsp:getProperty name="user" property="dataNascita"/></td>
-                        <td><jsp:getProperty name="user" property="email"/></td>
-                        <td><jsp:getProperty name="user" property="telefono"/></td>
-                    </tr>
+                    <thead><tr><th>Username</th><th>Nome</th><th>Cognome</th><th>Data di nascita</th><th>Email</th><th>Telefono</th></tr></thead>
+                    <tbody>
+                        <tr>
+                            <td><jsp:getProperty name="user" property="username"/></td>
+                            <td><jsp:getProperty name="user" property="nome"/></td>
+                            <td><jsp:getProperty name="user" property="cognome"/></td>
+                            <td><jsp:getProperty name="user" property="dataNascita"/></td>
+                            <td><jsp:getProperty name="user" property="email"/></td>
+                            <td><jsp:getProperty name="user" property="telefono"/></td>
+                        </tr>
+                    </tbody>
                 </table>
             </div>
 
@@ -76,7 +78,7 @@
 
             <%-- something weird is up con questo bottone e <a>, Rob vedi tu cosa fare --%>
             <a href="<%= response.encodeURL(".") + "?logout=true" %>">
-                <button onclick="eliminaUtente(username)">Elimina il mio account</button>
+                <div class="buttonContainer"><button onclick="eliminaUtente(username)">Elimina il mio account</button></div>
             </a>
     </div>
 
