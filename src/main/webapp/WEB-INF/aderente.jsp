@@ -22,11 +22,13 @@
 
             <div class="scheda centered">
                 <h3 class="titoloPagina">Aiutaci a sostenere le nostre attività!</h3>
-                <form action=<%=response.encodeURL("donazione")%> method="POST">
-                    <input type="hidden" name="email" value="<%= user.getEmail() %>">
-                    <input type="number" name="donazione" id="donazione"><br/>
-                    <div class="buttonContainer"><input type="submit" value="Dona"></div>
-                </form>
+                <div class="form-center">
+                    <form action=<%=response.encodeURL("donazione")%> method="POST">
+                        <input type="hidden" name="email" value="<%= user.getEmail() %>">
+                        <input type="number" name="donazione" id="donazione"><br/><br/>
+                        <div class="buttonContainer"><input type="submit" value="Dona"></div>
+                    </form>
+                </div>
             </div>
 
             <%-- TODO: trova una soluzione per le frasi motivazionali che stanno come sheda decentrata --%>

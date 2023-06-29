@@ -1,5 +1,5 @@
 body {
-    background: rgb(191, 209, 245);
+    background: rgb(245, 191, 191);
     margin: 0px;
     font-family: 'Roboto', sans-serif;
 }
@@ -10,7 +10,7 @@ body {
     height: 86px; /* altezza logo */
     position: sticky;
     top: 0;
-    background-color: rgb(158, 188, 245);
+    background-color: rgb(245, 158, 158);
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -39,7 +39,7 @@ body {
 }
 /* stile per i tasti della navbar quandi li hoveri */
 #navBar > div > a:hover {
-    background-color: rgb(71, 130, 255);
+    background-color: rgb(255, 71, 71);
 }
 /* eccezione per il tasti con l'immagine, a questo non serve il padding */
 #navBar > div > a:has(img) {
@@ -50,7 +50,7 @@ body {
 #footer {
     text-align: center;
     width: 100%;
-    background-color: rgb(158, 188, 245);
+    background-color: rgb(245, 158, 158);
     line-height: 50px;
     height: fit-content;
     box-shadow: 0px 2px 11px 0px #4f4f4f;
@@ -65,7 +65,7 @@ body {
     min-height: calc(100vh - 50px - 86px - 20px);
     width: 80%;
     margin: auto;
-    background-color: rgb(222, 230, 245);
+    background-color: rgb(245, 222, 222);
     padding: 10px;
     display: flex;
     flex-direction: column;
@@ -75,7 +75,7 @@ body {
 /*Le schede hanno un titolo e un corpo*/
 .scheda {
     width: 90%;
-    background-color: rgb(191, 209, 245);
+    background-color: rgb(245, 191, 191);
     padding: 10px;
     align-self: flex-start;
     transition: all 0.25s ease-in-out;
@@ -83,7 +83,7 @@ body {
 .scheda:not(:has(input):has(button)):hover {
     /*width: calc(100% - 20px);*/
     transform: translate(15px, -15px);
-    box-shadow: -15px 15px #08112f;
+    box-shadow: -15px 15px #2f0808;
 }
 .scheda p {
     font-size: 20px;
@@ -94,7 +94,7 @@ body {
 }
 .scheda:nth-child(2n):not(:has(input):has(button)):hover {
     transform: translate(-15px, -15px);
-    box-shadow: 15px 15px #08142f;
+    box-shadow: 15px 15px #2f0808;
 }
 
 /* puoi aggiungere centered a una scheda per metterla al centro */
@@ -151,16 +151,16 @@ button {
     border-radius: 8px;
     padding: 0 20px;
     margin-bottom: 10px;
-    background-color: rgb(135, 178, 249);
+    background-color: rgb(249, 135, 135);
     font-weight: bold;
 }
 
 button:hover {
-    background-color: rgb(71, 130, 255);
+    background-color: rgb(255, 71, 71);
 }
 
 button:active {
-    background-color: rgb(12, 89, 255);
+    background-color: rgb(255, 12, 12);
 }
 
 input[type=submit] {
@@ -176,16 +176,16 @@ input[type=submit] {
     border-radius: 8px;
     padding: 0 20px;
     margin-bottom: 10px;
-    background-color: rgb(135, 178, 249);
+    background-color: rgb(249, 135, 135);
     font-weight: bold;
 }
 
 input[type=submit]:hover {
-    background-color: rgb(71, 130, 255);
+    background-color: rgb(255, 71, 71);
 }
 
 input[type=submit]:active {
-    background-color: rgb(12, 89, 255);
+    background-color: rgb(255, 12, 12);
 }
 
 .submitButton {
@@ -197,7 +197,7 @@ input[type=submit]:active {
     min-height: calc(100vh - 50px - 86px - 20px - 101px);
     width: 80%;
     margin: auto;
-    background-color: rgb(222, 236, 255);
+    background-color: rgb(255, 222, 222);
     padding: 10px;
     display: flex;
     flex-direction: column;
@@ -213,55 +213,4 @@ input[type=submit]:active {
 .buttonContainer {
     display: flex;
     justify-content: center;
-}
-
-input[type=checkbox] + label {
-    display: inline-block;
-    margin: 0.3em;
-    cursor: pointer;
-    padding: 0.2em;
-}
-
-input[type=checkbox] {
-    display: none;
-}
-
-input[type=checkbox] + label:before {
-    content: "\2714";
-    border: 0.1em solid #000;
-    border-radius: 0.2em;
-    display: inline-block;
-    width: 1em;
-    height: 1em;
-    padding-left: 0.2em;
-    padding-bottom: 0.3em;
-    margin-right: 0.2em;
-    vertical-align: bottom;
-    color: transparent;
-    transition: .2s;
-}
-
-input[type=checkbox] + label:active:before {
-    transform: scale(0);
-}
-
-input[type=checkbox]:checked + label:before {
-    background-color: #044ed7;
-    border-color: #0440d7;
-    color: #fff;
-}
-
-input[type=checkbox]:disabled + label:before {
-    transform: scale(1);
-    border-color: #aaa;
-}
-
-input[type=checkbox]:checked:disabled + label:before {
-    transform: scale(1);
-    background-color: #0435d7;
-    border-color: #0435d7;
-}
-
-img {
-    display: inline-block;
 }

@@ -25,18 +25,23 @@
 
 <div class="scheda centered">
     <h3 class="titoloPagina">Iscriviti alle nostre attività</h3><br/>
-    <form action="<%=response.encodeURL("iscrizione")%>" method="POST">
-        <input type="checkbox" name="opzione" value="1" id="mobilitazione" <%if (iscrizione1.getIscritto()){%> checked disabled <%}%> />
-        <label for="mobilitazione">Mobilitazione diretta</label><br>
+    <div class="form-center">
+        <form action="<%=response.encodeURL("iscrizione")%>" method="POST">
+            <input type="checkbox" name="opzione" value="1" id="mobilitazione" <%if (iscrizione1.getIscritto()){%> checked disabled <%}%> />
+            <label for="mobilitazione">Mobilitazione diretta</label>
+            <a href="divulgazione.jsp"><img src="images/redirect.png" alt="redirect" height="15" width="15"></a><br/>
 
-        <input type="checkbox" name="opzione" value="2" id="azione" <%if (iscrizione2.getIscritto()){%> checked disabled <%}%> />
-        <label for="azione">Azione diretta</label><br>
+            <input type="checkbox" name="opzione" value="2" id="azione" <%if (iscrizione2.getIscritto()){%> checked disabled <%}%> />
+            <label for="azione">Azione diretta</label>
+            <a href="azionediretta.jsp"><img src="images/redirect.png" alt="redirect" height="15" width="15"></a><br/>
 
-        <input type="checkbox" name="opzione" value="3" id="collaborazione" <%if (iscrizione3.getIscritto()){%> checked disabled <%}%> />
-        <label for="collaborazione">Collaborazione locale</label><br>
+            <input type="checkbox" name="opzione" value="3" id="collaborazione" <%if (iscrizione3.getIscritto()){%> checked disabled <%}%> />
+            <label for="collaborazione">Collaborazione locale</label>
+            <a href="collaborazione.jsp"><img src="images/redirect.png" alt="redirect" height="15" width="15"></a><br/><br/>
 
-        <div class="buttonContainer"><input type="submit" value="Iscriviti"></div>
-    </form>
+            <div class="buttonContainer"><input type="submit" value="Iscriviti"></div>
+        </form>
+    </div>
 </div>
 
 <div class="scheda centered">

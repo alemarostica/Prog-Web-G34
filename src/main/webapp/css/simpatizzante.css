@@ -265,3 +265,8 @@ input[type=checkbox]:checked:disabled + label:before {
 img {
     display: inline-block;
 }
+
+.form-center {
+    display: flex;
+    justify-content: center;
+}
