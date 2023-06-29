@@ -17,6 +17,8 @@ public class FiltroVisite implements Filter {
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws ServletException, IOException {
         String[] parti = ((HttpServletRequest)request).getRequestURI().split("/",-1);
         String nomePagina = parti[parti.length-1];
+        nomePagina = nomePagina.replaceAll(";jsessionid=.*","");
+
         if (nomePagina.equals("")) nomePagina="index.jsp";
         ContatoreVisite.incrementa(nomePagina);
         System.out.println(nomePagina);

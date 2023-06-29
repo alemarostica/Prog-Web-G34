@@ -7,7 +7,7 @@
     </head>
     <body>
         <%@include file="componenti/navBar.jsp"%>
-        <div class="corpo">
+        <div class="container">
             <div class="scheda centered">
                 <jsp:useBean id="nameBean" scope="request" class="com.g34.unitn.it.progwebg34.NameBean"/>
                 <h1 class="titoloScheda">Grazie <%=nameBean.toString()%> per esserti registrato!</h1>

@@ -1,6 +1,6 @@
 <div id="navBar">
     <div id="navbarLeft">
-        <a href="<%= response.encodeURL("index.jsp")%>"><img class="logo" src="images/logo.png" alt="logo"></a>
+        <a href="<%= response.encodeURL("index.jsp")%>"><img class="logo" src="images/logo.svg" alt="logo"></a>
     </div>
     <div id="navbarCenter">
         <a href="<%= response.encodeURL("chisiamo.jsp")%>">CHI SIAMO</a>
@@ -15,7 +15,7 @@
         <a href="<%= response.encodeURL("login")%>">LOG IN</a>
     <%}else{%>
         <a href="<%=response.encodeURL("areaPrivata")%>">Area Privata</a>
-        <a href="<%= response.encodeURL(".") + "?logout=true" %>">Log out</a>
+        <a href="<%= response.encodeURL(".?logout=true") %>">Log out</a>
     <%}%>
     </div>
 </div>

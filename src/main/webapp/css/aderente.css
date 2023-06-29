@@ -44,6 +44,11 @@ body {
 /* eccezione per il tasti con l'immagine, a questo non serve il padding */
 #navBar > div > a:has(img) {
     padding: 0px;
+    height: 86px;
+}
+
+.logo {
+    height: 86px;
 }
 
 /* footer */
