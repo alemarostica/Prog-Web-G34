@@ -1,0 +1,267 @@
+body {
+    background: rgb(191, 209, 245);
+    margin: 0px;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* navbar */
+#navBar {
+    z-index: 10; /* tieni in primo piano */
+    height: 86px; /* altezza logo */
+    position: sticky;
+    top: 0;
+    background-color: rgb(158, 188, 245);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 0px 6px 0px #4f4f4f;
+}
+/* si applica a tutte e tre le sezioni della navbar */
+#navBar > div {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+}
+/* stile per i tasti della navbar */
+#navBar a {
+    background-color: transparent;
+    font-size: 22px;
+    padding: 30px 30px;
+    /*font-weight: bold;
+    text-decoration-thickness: 2px;*/
+    text-decoration: none;
+    color: black;
+    transition: background-color 0.25s ease-in-out;
+    white-space: nowrap;
+}
+/* stile per i tasti della navbar quandi li hoveri */
+#navBar > div > a:hover {
+    background-color: rgb(71, 130, 255);
+}
+/* eccezione per il tasti con l'immagine, a questo non serve il padding */
+#navBar > div > a:has(img) {
+    padding: 0px;
+}
+
+/* footer */
+#footer {
+    text-align: center;
+    width: 100%;
+    background-color: rgb(158, 188, 245);
+    line-height: 50px;
+    height: fit-content;
+    box-shadow: 0px 2px 11px 0px #4f4f4f;
+}
+#footer p {
+    margin: 0px;
+}
+
+/*il container principale della pagina*/
+.container {
+    /*100 - footer - navbar - padding*/
+    min-height: calc(100vh - 50px - 86px - 20px);
+    width: 80%;
+    margin: auto;
+    background-color: rgb(222, 230, 245);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+}
+
+/*Le schede hanno un titolo e un corpo*/
+.scheda {
+    width: 90%;
+    background-color: rgb(191, 209, 245);
+    padding: 10px;
+    align-self: flex-start;
+    transition: all 0.25s ease-in-out;
+}
+.scheda:not(:has(input):has(button)):hover {
+    /*width: calc(100% - 20px);*/
+    transform: translate(15px, -15px);
+    box-shadow: -15px 15px #08112f;
+}
+.scheda p {
+    font-size: 20px;
+}
+/* le schede e il loro tiolo vengono staggherate a destra e sinistra alternate */
+.scheda:nth-child(2n) {
+    align-self: flex-end;
+}
+.scheda:nth-child(2n):not(:has(input):has(button)):hover {
+    transform: translate(-15px, -15px);
+    box-shadow: 15px 15px #08142f;
+}
+
+/* puoi aggiungere centered a una scheda per metterla al centro */
+.scheda.centered {
+    align-self: center;
+}
+.titoloScheda {
+    text-align: initial;
+}
+.scheda:nth-child(2n) .titoloScheda {
+    text-align: end;
+}
+/* puoi agigungere centered pure al titolo e al corpo per centrare anche quelli */
+.scheda.centered .titoloScheda {
+    text-align: center;
+}
+.corpo.centered {
+    text-align: center;
+    justify-content: center;
+}
+
+/* il titolo della pagina va tenuto nel div "container" altrimenti il calcolo della posizione della navbar diventa sbagliato */
+.titoloPagina {
+    text-align: center;
+}
+
+/* gli elementi del corpo di una scheda sono disposti orizzontalmente */
+/* le immagini prendono il 20% del corpo e sono centrate verticalmente (vanno messe in un wrapper)*/
+.corpo {
+    display: flex;
+    flex-direction: row;
+}
+.scheda.centered .corpo {
+    justify-content: center;
+}
+.corpo * {
+    flex: 1;
+}
+
+.hiddenTable {
+    display: none;
+}
+
+button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+
+    font-size: 16px;
+    line-height: 1.5;
+
+    display: inline-block;
+    height: 40px;
+    border-radius: 8px;
+    padding: 0 20px;
+    margin-bottom: 10px;
+    background-color: rgb(135, 178, 249);
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: rgb(71, 130, 255);
+}
+
+button:active {
+    background-color: rgb(12, 89, 255);
+}
+
+input[type=submit] {
+    border: none;
+    outline: none;
+    cursor: pointer;
+
+    font-size: 16px;
+    line-height: 1.5;
+
+    display: inline-block;
+    height: 40px;
+    border-radius: 8px;
+    padding: 0 20px;
+    margin-bottom: 10px;
+    background-color: rgb(135, 178, 249);
+    font-weight: bold;
+}
+
+input[type=submit]:hover {
+    background-color: rgb(71, 130, 255);
+}
+
+input[type=submit]:active {
+    background-color: rgb(12, 89, 255);
+}
+
+.submitButton {
+    display: flex;
+    justify-content: center;
+}
+
+.userContainer {
+    min-height: calc(100vh - 50px - 86px - 20px - 101px);
+    width: 80%;
+    margin: auto;
+    background-color: rgb(222, 236, 255);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+}
+
+.welcome {
+    text-align: center;
+    font-size: 48px;
+    font-weight: bold;
+}
+
+.buttonContainer {
+    display: flex;
+    justify-content: center;
+}
+
+input[type=checkbox] + label {
+    display: inline-block;
+    margin: 0.3em;
+    cursor: pointer;
+    padding: 0.2em;
+}
+
+input[type=checkbox] {
+    display: none;
+}
+
+input[type=checkbox] + label:before {
+    content: "\2714";
+    border: 0.1em solid #000;
+    border-radius: 0.2em;
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    padding-left: 0.2em;
+    padding-bottom: 0.3em;
+    margin-right: 0.2em;
+    vertical-align: bottom;
+    color: transparent;
+    transition: .2s;
+}
+
+input[type=checkbox] + label:active:before {
+    transform: scale(0);
+}
+
+input[type=checkbox]:checked + label:before {
+    background-color: #044ed7;
+    border-color: #0440d7;
+    color: #fff;
+}
+
+input[type=checkbox]:disabled + label:before {
+    transform: scale(1);
+    border-color: #aaa;
+}
+
+input[type=checkbox]:checked:disabled + label:before {
+    transform: scale(1);
+    background-color: #0435d7;
+    border-color: #0435d7;
+}
+
+img {
+    display: inline-block;
+}

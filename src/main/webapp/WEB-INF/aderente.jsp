@@ -7,27 +7,32 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-<head>
-    <%@ include file="componenti/head.html"%>
-    <script src="js/userScripts.js"></script>
-    <link rel="stylesheet" href="css/main.css" type="text/css"/>
-    <link rel="stylesheet" href="css/userpage.css" type="text/css"/>
-</head>
-<body>
-<%@ include file="componenti/navBar.jsp"%>
-<div class="container">
-    <%@ include file="componenti/users.jsp"%>
 
-    <form action=<%=response.encodeURL("donazione")%> method="POST">
-        <input type="hidden" name="email" value="<%= user.getEmail() %>">
-        <input type="number" name="donazione" id="donazione">
-        <input type="submit" value="Dona">
-    </form>
+    <head>
+        <%@ include file="componenti/head.html"%>
+        <script src="js/userScripts.js"></script>
+        <link rel="stylesheet" href="css/aderente.css" type="text/css"/>
+        <link rel="stylesheet" type="text/css" href="css/table.css"/>
+    </head>
 
-    <%@ include file="componenti/frasiMotivazionali.html"%>
-</div>
+    <body>
+    <%@ include file="componenti/navBar.jsp"%>
+        <div class="container">
+            <%@ include file="componenti/users.jsp"%>
 
-<%@ include file="componenti/Footer.html"%>
-</body>
+            <div class="scheda centered">
+                <h3 class="titoloPagina">Aiutaci a sostenere le nostre attività!</h3>
+                <form action=<%=response.encodeURL("donazione")%> method="POST">
+                    <input type="hidden" name="email" value="<%= user.getEmail() %>">
+                    <input type="number" name="donazione" id="donazione"><br/>
+                    <div class="buttonContainer"><input type="submit" value="Dona"></div>
+                </form>
+            </div>
+
+            <%-- TODO: trova una soluzione per le frasi motivazionali che stanno come sheda decentrata --%>
+            <%@ include file="componenti/frasiMotivazionali.html"%>
+        </div>
+    <%@ include file="componenti/Footer.html"%>
+    </body>
+
 </html>
-
