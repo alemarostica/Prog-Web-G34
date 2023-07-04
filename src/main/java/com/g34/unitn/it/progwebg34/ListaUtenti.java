@@ -14,56 +14,61 @@ import com.google.gson.JsonArray;
 public class ListaUtenti extends HttpServletDB {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        //prelevo dalla richiesta la tipologia di utenti da restituire
-        String tipologia = request.getParameter("tipologia");
+        //verifico se a chiamare l'API è l'admin
+        HttpSession sessione = request.getSession();
+        UserBean user = (UserBean) (sessione.getAttribute("user"));
 
-        //scelta della query in base alla tipologia richiesta
-        String query = "";
-        if(tipologia == null || tipologia.equals("all")){
-            query = "SELECT * FROM Iscritto";                       //tutti gli utenti
-        }else if(tipologia.equals("simpatizzanti")){
-            query = "SELECT * FROM Iscritto WHERE Tipologia = 0";   //i simpatizzanti
-        }else if(tipologia.equals("aderenti")){
-            query = "SELECT * FROM Iscritto WHERE Tipologia = 1";   //gli aderenti
-        }else{
-            //se il parametro in input assume altri valori (non validi), non restituisco nulla
-            query = "SELECT * FROM Iscritto WHERE 1 = 0";
-        }
+        if (user != null && user.getTipologia() == 2) {
+            //prelevo dalla richiesta la tipologia di utenti da restituire
+            String tipologia = request.getParameter("tipologia");
 
-        try {
-            //invio query al database
-            PreparedStatement s = connection.prepareStatement(query);
-            ResultSet rs = s.executeQuery();
-
-            //imposto le proprietà della risposta
-            response.setContentType("application/json");
-            response.setCharacterEncoding("utf-8");
-
-            //man mano che viene letto il ResultSet, creo un bean per l'utente e lo aggiungo all'array json
-            JsonArray array = new JsonArray();
-            while (rs.next()) {
-                UserBean uBean = new UserBean();
-
-                uBean.setUsername(rs.getString("Username"));
-                uBean.setNome(rs.getString("Nome"));
-                uBean.setCognome(rs.getString("Cognome"));
-                uBean.setDataNascita(rs.getDate("DataNascita"));
-                uBean.setEmail(rs.getString("Email"));
-                uBean.setTelefono(rs.getString("Telefono"));
-                uBean.setTipologia(rs.getInt("Tipologia"));
-
-                Gson gson = new Gson();
-                array.add(gson.toJson(uBean));
+            //scelta della query in base alla tipologia richiesta
+            String query = "";
+            if(tipologia == null || tipologia.equals("all")){
+                query = "SELECT * FROM Iscritto";                       //tutti gli utenti
+            }else if(tipologia.equals("simpatizzanti")){
+                query = "SELECT * FROM Iscritto WHERE Tipologia = 0";   //i simpatizzanti
+            }else if(tipologia.equals("aderenti")){
+                query = "SELECT * FROM Iscritto WHERE Tipologia = 1";   //gli aderenti
+            }else{
+                //se il parametro in input assume altri valori (non validi), non restituisco nulla
+                query = "SELECT * FROM Iscritto WHERE 1 = 0";
             }
 
-            //stampo l'array nella risposta da inviare al client
-            PrintWriter out = response.getWriter();
-            out.println(array);
-            out.flush();
-        }catch (IOException | SQLException e) {
-            e.printStackTrace();
-        }
+            try {
+                //invio query al database
+                PreparedStatement s = connection.prepareStatement(query);
+                ResultSet rs = s.executeQuery();
 
+                //imposto le proprietà della risposta
+                response.setContentType("application/json");
+                response.setCharacterEncoding("utf-8");
+
+                //man mano che viene letto il ResultSet, creo un bean per l'utente e lo aggiungo all'array json
+                JsonArray array = new JsonArray();
+                while (rs.next()) {
+                    UserBean uBean = new UserBean();
+
+                    uBean.setUsername(rs.getString("Username"));
+                    uBean.setNome(rs.getString("Nome"));
+                    uBean.setCognome(rs.getString("Cognome"));
+                    uBean.setDataNascita(rs.getDate("DataNascita"));
+                    uBean.setEmail(rs.getString("Email"));
+                    uBean.setTelefono(rs.getString("Telefono"));
+                    uBean.setTipologia(rs.getInt("Tipologia"));
+
+                    Gson gson = new Gson();
+                    array.add(gson.toJson(uBean));
+                }
+
+                //stampo l'array nella risposta da inviare al client
+                PrintWriter out = response.getWriter();
+                out.println(array);
+                out.flush();
+            }catch (IOException | SQLException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     @Override
