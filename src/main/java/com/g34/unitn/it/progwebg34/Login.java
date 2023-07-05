@@ -40,7 +40,6 @@ public class Login extends HttpServletDB {
 
             ResultSet rs = s.executeQuery();
 
-            UserBean uBean = new UserBean();
 
             //verifico di aver ricevuto i dati dell'utente
             if(!rs.next()){
@@ -55,6 +54,7 @@ public class Login extends HttpServletDB {
             }else {
                 //verifico se la password ricevuta dalla richiesta corrisponde a quella ottenuta dal DB
                 if (rs.getString("Password").equals(password)) {
+                    UserBean uBean = new UserBean();
                     uBean.setUsername(rs.getString("Username"));
                     uBean.setNome(rs.getString("Nome"));
                     uBean.setCognome(rs.getString("Cognome"));
@@ -76,20 +76,8 @@ public class Login extends HttpServletDB {
                 }
             }
 
-            switch (uBean.getTipologia()) {
-                case 0:
-                    request.getRequestDispatcher("WEB-INF/simpatizzante.jsp").forward(request,response);
-                    break;
-                case 1:
-                    request.getRequestDispatcher("WEB-INF/aderente.jsp").forward(request,response);
-                    break;
-                case 2:
-                    ContatoreVisite.incrementa("areaAmministratore.jsp");
-                    request.getRequestDispatcher("WEB-INF/areaAmministratore.jsp").forward(request,response);
-                    break;
-            }
-            //redirect alla home per concludere la procedura di login
-            //response.sendRedirect(response.encodeRedirectURL("index.jsp"));
+            //redirect all'area privata per concludere la procedura di login
+            response.sendRedirect(response.encodeRedirectURL("areaPrivata"));
 
 
         } catch (SQLException e) {

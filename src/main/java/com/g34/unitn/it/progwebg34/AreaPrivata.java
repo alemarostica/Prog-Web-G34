@@ -33,9 +33,11 @@ public class AreaPrivata extends HttpServletDB {
             }
             switch (user.getTipologia()) {
                 case 0:
+                    ContatoreVisite.incrementa("simpatizzante.jsp");
                     request.getRequestDispatcher("WEB-INF/simpatizzante.jsp").forward(request,response);
                     break;
                 case 1:
+                    ContatoreVisite.incrementa("aderente.jsp");
                     request.getRequestDispatcher("WEB-INF/aderente.jsp").forward(request,response);
                     break;
                 case 2:
