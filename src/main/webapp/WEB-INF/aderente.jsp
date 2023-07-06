@@ -1,10 +1,3 @@
-<%@ page import="com.g34.unitn.it.progwebg34.UserBean" %><%--
-  Created by IntelliJ IDEA.
-  User: rober
-  Date: 06/06/2023
-  Time: 16.32
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 
@@ -23,15 +16,14 @@
             <div class="scheda centered">
                 <h3 class="titoloPagina">Aiutaci a sostenere le nostre attività!</h3>
                 <div class="form-center">
-                    <form action=<%=response.encodeURL("donazione")%> method="POST">
+                    <form action="<%=response.encodeURL("donazione")%>" method="POST">
                         <input type="hidden" name="email" value="<%= user.getEmail() %>">
-                        <input type="number" name="donazione" id="donazione"><br/><br/>
+                        <input type="number" name="donazione" id="donazione" min="1"> €<br/><br/>
                         <div class="buttonContainer"><input type="submit" value="Dona"></div>
                     </form>
                 </div>
             </div>
 
-            <%-- TODO: trova una soluzione per le frasi motivazionali che stanno come sheda decentrata --%>
             <%@ include file="componenti/frasiMotivazionali.html"%>
         </div>
     <%@ include file="componenti/Footer.html"%>

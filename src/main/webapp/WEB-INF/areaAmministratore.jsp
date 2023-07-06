@@ -39,8 +39,8 @@
             <div class="scheda centered">
                 <h3 class="titoloPagina">Visite sito</h3>
                 <div class="buttonContainer">
-                    <div style="display: inline-block; padding: 2px" class="buttonContainer"><button onclick="mostraVisite()">Visualizza visite</button></div>
-                    <div style="display: inline-block; padding: 2px" class="buttonContainer"><button onclick="resetVisite()">resetta contatori</button></div>
+                    <div style="display: inline-block; padding: 2px" class="buttonContainer"><button onclick="mostraVisite()">Visualizza Visite</button></div>
+                    <div style="display: inline-block; padding: 2px" class="buttonContainer"><button onclick="resetVisite()">Resetta Contatori</button></div>
                 </div>
                     <p class="titoloPagina" id="totaleVisite"></p>
                 <div class="histogram" id="istogrammaVisite" style="width:500px; height: 300px;"></div>

@@ -11,6 +11,10 @@ th, td {
     border: 1px solid black;
 }
 
+th {
+    text-transform: capitalize;
+}
+
 tr:first-child{
     background-color: lightgray;
 }
