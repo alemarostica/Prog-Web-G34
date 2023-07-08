@@ -48,7 +48,8 @@ public class Contatti extends HttpServletDB {
             props.put("mail.smtp.host", "smtp.example.com");
             props.put("mail.smtp.port", "25");
 
-        /*try {
+            /*
+        try {
             Session session = Session.getDefaultInstance(props);
             // Crea un oggetto MimeMessage
             Message message = new MimeMessage(session);

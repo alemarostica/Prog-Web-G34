@@ -1,3 +1,6 @@
+<div id="intestazione">
+    Tum4World
+</div>
 <div id="navBar">
     <div id="navbarLeft">
         <a href="<%= response.encodeURL("index.jsp")%>"><img class="logo" src="images/logo.svg" alt="logo"></a>

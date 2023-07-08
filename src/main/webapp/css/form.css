@@ -37,6 +37,8 @@ form textarea {
     outline: none;
 
     font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: initial;    /* uniforma questa proprietà tra tan input, select e textarea */
     line-height: 1.5;
     color: #4f4f4f;
 

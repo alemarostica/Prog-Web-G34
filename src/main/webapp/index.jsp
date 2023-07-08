@@ -14,7 +14,7 @@
         <div class="corpo">
             <p><%= "L'Associazione Umanitaria Tum4World è un faro di speranza e solidarietà che illumina la strada dei bisognosi. Attraverso il nostro impegno costante e la passione nel voler fare la differenza, ci dedichiamo a migliorare le vite di coloro che si trovano in situazioni di disagio e vulnerabilità. Ogni giorno, mettiamo in atto progetti e iniziative che affrontano le sfide più urgenti della nostra società: dalla lotta alla povertà, al sostegno all'istruzione, alla cura della salute e alla promozione dei diritti umani. Con il sostegno e la partecipazione di generosi donatori e volontari, riusciamo a creare un impatto tangibile nelle comunità che serviamo. Siamo convinti che il cambiamento sia possibile e che, uniti, possiamo costruire un futuro migliore per tutti. Unisciti a noi e diventa parte di questa straordinaria missione di speranza e solidarietà." %></p>
             <div class="imgWrap">
-                <img src="images/homepagepic.jpg"/>
+                <img src="images/logo.svg"/>
             </div>
         </div>
     </div>

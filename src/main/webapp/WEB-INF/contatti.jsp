@@ -12,7 +12,7 @@
 
         <div class="container">
 
-            <div class="scheda">
+            <div class="scheda centered">
                 <h1 class="titoloScheda">Lasciaci un messaggio, ti ricontatteremo il più presto possibile</h1>
                 <div class="corpo">
                     <form action="<%=response.encodeURL("contatti")%>" method="post" onsubmit="return validaFormContatti(this)" autocomplete="off">
@@ -44,12 +44,11 @@
                 </div>
             </div>
             <div class="scheda">
-                <h1 class="titoloScheda">La nostra sede principale è in via Gruppo 34</h1>
+                <h1 class="titoloScheda">Vieni a trovarci</h1>
                 <div class="corpo">
+                    <p>Siamo sempre disponibili per ricevere visite alla nostra sede da parte dei soci della nostra associazione!<br>La nostra sede principale è in via Gruppo 34 a Povo, frazione di Trento.<br><br>Per prenotare un appuntamento, o per altre informazioni, puoi telefonarci al numero 0461 343434 dal martedì al venerdì, dalle 14 alle 18:30.<br>Per organizzare visite con comitive, contattaci tramite il form in questa pagina.</p>
                     <div>
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d692.0477615846015!2d11.161657292243712!3d46.06723166597202!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4782769398f78a33%3A0xa0709898bf37370!2s38123%20Povo%20TN!5e0!3m2!1sit!2sit!4v1684849198016!5m2!1sit!2sit" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                        <br/>
-                        <h1>Puoi telefonarci al 343434</h1>
                     </div>
                 </div>
 

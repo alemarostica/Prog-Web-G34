@@ -23,11 +23,6 @@ public class Donazione extends HttpServletDB {
         String mail = request.getParameter("email");
         String donazione = request.getParameter("donazione");
         int don = Integer.parseInt(donazione);
-        StringBuilder test = new StringBuilder("INSERT INTO DONAZIONE (EMAILADERENTE, DATA, VALORE) VALUES ('");
-        test.append(mail + "', '");
-        test.append(LocalDate.now().toString() + "',");
-        test.append(don);
-        System.out.println(test);
 
         try{
             String query = "INSERT INTO DONAZIONE (EMAILADERENTE, DATA, VALORE) VALUES (?, ?, ?)";
@@ -36,11 +31,11 @@ public class Donazione extends HttpServletDB {
             s.setString(1, mail);
             s.setString(2, LocalDate.now().toString());
             s.setInt(3, don);
-            System.out.println(query);
+
             s.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        response.sendRedirect("index.jsp");
+        response.sendRedirect("areaPrivata");
     }
 }
