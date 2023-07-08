@@ -19,7 +19,7 @@ public class FiltroVisite implements Filter {
         String nomePagina = parti[parti.length-1];
         nomePagina = nomePagina.replaceAll(";jsessionid=.*","");
 
-        if (nomePagina.equals("")) nomePagina="index.jsp";
+        if (nomePagina.equals("") || nomePagina.equals(".")) nomePagina="index.jsp";
         ContatoreVisite.incrementa(nomePagina);
         System.out.println(nomePagina);
         chain.doFilter(request, response);
