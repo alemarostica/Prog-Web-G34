@@ -1,4 +1,4 @@
-package com.g34.unitn.it.progwebg34;
+package com.g34.unitn.it.progwebg34.servlet;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -9,7 +9,6 @@ import java.sql.*;
 import java.util.HashMap;
 
 import com.google.gson.Gson;
-import com.google.gson.JsonArray;
 
 @WebServlet(name = "Donazioni", value = "/donazioni")
 public class Donazioni extends HttpServletDB {

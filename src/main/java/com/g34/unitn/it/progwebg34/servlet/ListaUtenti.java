@@ -1,4 +1,4 @@
-package com.g34.unitn.it.progwebg34;
+package com.g34.unitn.it.progwebg34.servlet;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.*;
 
+import com.g34.unitn.it.progwebg34.beans.UserBean;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 

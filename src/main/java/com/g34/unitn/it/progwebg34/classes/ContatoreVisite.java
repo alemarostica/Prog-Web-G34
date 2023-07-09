@@ -1,4 +1,4 @@
-package com.g34.unitn.it.progwebg34;
+package com.g34.unitn.it.progwebg34.classes;
 
 import java.util.HashMap;
 import java.util.Map;

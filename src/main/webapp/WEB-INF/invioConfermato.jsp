@@ -7,7 +7,7 @@
     </head>
     <body>
         <%@include file="componenti/navBar.jsp"%>
-        <jsp:useBean id="nameBean" scope="request" class="com.g34.unitn.it.progwebg34.NameBean"/>
+        <jsp:useBean id="nameBean" scope="request" class="com.g34.unitn.it.progwebg34.beans.NameBean"/>
         <div class="container">
             <div class="scheda centered">
                 <h1 class="titoloScheda">Invio Confermato</h1>

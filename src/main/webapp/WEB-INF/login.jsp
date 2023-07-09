@@ -25,7 +25,7 @@
                                     //stampa di eventuali errori provenienti da un tentativo di registrazione precedente
                                     if(request.getAttribute("erroreLogin") != null){
                                 %>
-                                <jsp:useBean id="erroreLogin" scope="request" class="com.g34.unitn.it.progwebg34.ErrorBean"/>
+                                <jsp:useBean id="erroreLogin" scope="request" class="com.g34.unitn.it.progwebg34.beans.ErrorBean"/>
                                 <%= erroreLogin.getTitle() %>: <%= erroreLogin.getMessage() %>
                                 <%
                                     }

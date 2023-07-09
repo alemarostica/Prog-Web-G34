@@ -1,4 +1,6 @@
-package com.g34.unitn.it.progwebg34;
+package com.g34.unitn.it.progwebg34.filters;
+
+import com.g34.unitn.it.progwebg34.classes.ContatoreVisite;
 
 import javax.servlet.*;
 import javax.servlet.annotation.*;

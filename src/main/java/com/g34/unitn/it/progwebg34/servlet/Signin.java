@@ -1,5 +1,9 @@
-package com.g34.unitn.it.progwebg34;
+package com.g34.unitn.it.progwebg34.servlet;
 
+import com.g34.unitn.it.progwebg34.beans.ErrorBean;
+import com.g34.unitn.it.progwebg34.beans.NameBean;
+import com.g34.unitn.it.progwebg34.beans.UserBean;
+import com.g34.unitn.it.progwebg34.classes.ContatoreVisite;
 import org.apache.derby.shared.common.error.DerbySQLIntegrityConstraintViolationException;
 
 import javax.servlet.*;

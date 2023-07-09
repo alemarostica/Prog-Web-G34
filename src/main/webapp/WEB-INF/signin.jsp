@@ -40,7 +40,7 @@
                                     //stampa di eventuali errori provenienti da un tentativo di registrazione precedente
                                     if(request.getAttribute("erroreRegistrazione") != null){
                                 %>
-                                <jsp:useBean id="erroreRegistrazione" scope="request" class="com.g34.unitn.it.progwebg34.ErrorBean"/>
+                                <jsp:useBean id="erroreRegistrazione" scope="request" class="com.g34.unitn.it.progwebg34.beans.ErrorBean"/>
                                 <%= erroreRegistrazione.getTitle() %>: <%= erroreRegistrazione.getMessage() %>
                                 <%
                                     }

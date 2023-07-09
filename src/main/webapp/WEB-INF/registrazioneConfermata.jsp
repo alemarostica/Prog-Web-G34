@@ -9,7 +9,7 @@
         <%@include file="componenti/navBar.jsp"%>
         <div class="container">
             <div class="scheda centered">
-                <jsp:useBean id="nameBean" scope="request" class="com.g34.unitn.it.progwebg34.NameBean"/>
+                <jsp:useBean id="nameBean" scope="request" class="com.g34.unitn.it.progwebg34.beans.NameBean"/>
                 <h1 class="titoloScheda">Grazie <%=nameBean.toString()%> per esserti registrato!</h1>
                 <div class="corpo centered">
                     <p>Ti auguriamo una buona permanenza sul nostro sito</p>

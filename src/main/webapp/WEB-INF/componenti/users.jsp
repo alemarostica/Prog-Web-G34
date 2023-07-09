@@ -1,7 +1,7 @@
-<jsp:useBean id="user" class="com.g34.unitn.it.progwebg34.UserBean" scope="session"></jsp:useBean>
-<jsp:useBean id="iscrizione1" class="com.g34.unitn.it.progwebg34.AttivitaBean" scope="request"></jsp:useBean>
-<jsp:useBean id="iscrizione2" class="com.g34.unitn.it.progwebg34.AttivitaBean" scope="request"></jsp:useBean>
-<jsp:useBean id="iscrizione3" class="com.g34.unitn.it.progwebg34.AttivitaBean" scope="request"></jsp:useBean>
+<jsp:useBean id="user" class="com.g34.unitn.it.progwebg34.beans.UserBean" scope="session"></jsp:useBean>
+<jsp:useBean id="iscrizione1" class="com.g34.unitn.it.progwebg34.beans.AttivitaBean" scope="request"></jsp:useBean>
+<jsp:useBean id="iscrizione2" class="com.g34.unitn.it.progwebg34.beans.AttivitaBean" scope="request"></jsp:useBean>
+<jsp:useBean id="iscrizione3" class="com.g34.unitn.it.progwebg34.beans.AttivitaBean" scope="request"></jsp:useBean>
 
 <div class="welcome">
   <p>Benvenuto <jsp:getProperty name="user" property="nome"/></p>

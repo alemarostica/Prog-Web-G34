@@ -1,12 +1,12 @@
-package com.g34.unitn.it.progwebg34;
+package com.g34.unitn.it.progwebg34.servlet;
+
+import com.g34.unitn.it.progwebg34.beans.UserBean;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.time.LocalDate;
-import java.time.LocalTime;
 import java.sql.*;
 
 @WebServlet(name = "Iscrizione", value = "/iscrizione")

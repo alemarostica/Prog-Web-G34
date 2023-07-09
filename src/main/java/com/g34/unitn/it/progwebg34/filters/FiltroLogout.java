@@ -1,4 +1,4 @@
-package com.g34.unitn.it.progwebg34;
+package com.g34.unitn.it.progwebg34.filters;
 
 import javax.servlet.*;
 import javax.servlet.annotation.*;

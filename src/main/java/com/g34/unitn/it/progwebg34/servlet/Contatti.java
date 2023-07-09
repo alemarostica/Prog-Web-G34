@@ -1,4 +1,7 @@
-package com.g34.unitn.it.progwebg34;
+package com.g34.unitn.it.progwebg34.servlet;
+
+import com.g34.unitn.it.progwebg34.beans.NameBean;
+import com.g34.unitn.it.progwebg34.classes.ContatoreVisite;
 
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;

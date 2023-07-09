@@ -1,4 +1,8 @@
-package com.g34.unitn.it.progwebg34;
+package com.g34.unitn.it.progwebg34.servlet;
+
+import com.g34.unitn.it.progwebg34.beans.ErrorBean;
+import com.g34.unitn.it.progwebg34.beans.UserBean;
+import com.g34.unitn.it.progwebg34.classes.ContatoreVisite;
 
 import javax.servlet.*;
 import javax.servlet.http.*;

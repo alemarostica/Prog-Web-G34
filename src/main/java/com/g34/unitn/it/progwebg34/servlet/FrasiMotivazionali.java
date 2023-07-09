@@ -1,4 +1,4 @@
-package com.g34.unitn.it.progwebg34;
+package com.g34.unitn.it.progwebg34.servlet;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;

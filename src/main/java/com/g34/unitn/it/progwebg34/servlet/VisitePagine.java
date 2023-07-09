@@ -1,4 +1,4 @@
-package com.g34.unitn.it.progwebg34;
+package com.g34.unitn.it.progwebg34.servlet;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.HashMap;
 
+import com.g34.unitn.it.progwebg34.classes.ContatoreVisite;
 import com.google.gson.Gson;
 
 @WebServlet(name = "VisitePagine", value = "/visitePagine")

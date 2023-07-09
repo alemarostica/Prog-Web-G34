@@ -1,14 +1,12 @@
-package com.g34.unitn.it.progwebg34;
+package com.g34.unitn.it.progwebg34.servlet;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.*;
 
-import com.google.gson.Gson;
-import com.google.gson.JsonArray;
+import com.g34.unitn.it.progwebg34.beans.UserBean;
 
 @WebServlet(name = "EliminaUtente", value = "/eliminaUtente")
 public class EliminaUtente extends HttpServletDB {

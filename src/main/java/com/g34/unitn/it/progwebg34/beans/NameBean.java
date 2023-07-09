@@ -1,4 +1,4 @@
-package com.g34.unitn.it.progwebg34;
+package com.g34.unitn.it.progwebg34.beans;
 
 public class NameBean implements java.io.Serializable{
     private String nome;
