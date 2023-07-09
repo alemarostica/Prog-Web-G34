@@ -96,7 +96,6 @@ body {
     width: 90%;
     background-color: rgb(245, 191, 191);
     padding: 20px;
-    align-self: flex-start;
     transition: all 0.6s cubic-bezier(0, 0, 0.34, 0.98);
     border-radius: 16px;
 
@@ -181,6 +180,8 @@ button {
     margin-bottom: 10px;
     background-color: rgb(249, 135, 135);
     font-weight: bold;
+
+    transition: background-color 0.25s ease-in-out;
 }
 
 button:hover {
@@ -206,6 +207,8 @@ input[type=submit] {
     margin-bottom: 10px;
     background-color: rgb(249, 135, 135);
     font-weight: bold;
+
+    transition: background-color 0.25s ease-in-out;
 }
 
 input[type=submit]:hover {
@@ -241,4 +244,9 @@ input[type=submit]:active {
 .buttonContainer {
     display: flex;
     justify-content: center;
+}
+
+#istogrammaVisite, #istogrammaDonazioni{
+    max-width: 80%;
+    margin: 0 auto;
 }

@@ -19,6 +19,15 @@
         </div>
     </div>
 
+    <div class="scheda centered">
+        <h1 class="titoloScheda">Una foto con tutti gli aderenti alla nostra associazione</h1>
+        <div class="corpo">
+            <div class="imgWrap imgFullWidth">
+                <img src="images/groupofpeople.jpeg"/>
+            </div>
+        </div>
+    </div>
+
     <%@include file="WEB-INF/componenti/frasiMotivazionali.html"%>
 
     <div class="scheda">

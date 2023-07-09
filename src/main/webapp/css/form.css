@@ -130,10 +130,16 @@ form input[type=radio]:checked {
     border-radius: 8px;
     padding: 0 20px;
     margin-bottom: 10px;
+
+    transition: background-color 0.25s ease-in-out;
 }
 
 .form-controls > button:hover {
-    background: #c0c0c0;
+    background: #d7d7d7;
+}
+
+.form-controls > button:active {
+    background: #b7b7b7;
 }
 
 .form-controls > button[type=submit] {
@@ -142,13 +148,10 @@ form input[type=radio]:checked {
 }
 
 .form-controls > button[type=submit]:hover {
-    background: #1ad704;
+    background: #53ff53;
 }
 
 .form-controls > button[type=submit]:active {
     background: #1ca107;
 }
 
-.form-controls > button:active {
-    background: #9d9d9d;
-}

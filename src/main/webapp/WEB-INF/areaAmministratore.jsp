@@ -43,16 +43,15 @@
                     <div style="display: inline-block; padding: 2px" class="buttonContainer"><button onclick="resetVisite()">Resetta Contatori</button></div>
                 </div>
                     <p class="titoloPagina" id="totaleVisite"></p>
-                <div class="histogram" id="istogrammaVisite" style="width:500px; height: 300px;"></div>
+                <div class="histogram" id="istogrammaVisite"></div>
             </div>
 
             <div class="scheda centered">
                 <h3 class="titoloPagina">Donazioni</h3>
                 <div class="buttonContainer"><button onclick="mostraDonazioni()">Visualizza Donazioni</button></div>
-                <div class="histogram" id="istogrammaDonazioni" style="width:500px; height: 300px;"></div>
+                <div class="histogram" id="istogrammaDonazioni"></div>
             </div>
 
-            <%-- TODO: trova una soluzione per le frasi motivazionali che stanno come sheda decentrata --%>
             <%@ include file="componenti/frasiMotivazionali.html"%>
         </div>
 

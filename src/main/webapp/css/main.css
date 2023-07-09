@@ -53,7 +53,7 @@ body {
 }
 /* stile per i tasti della navbar quandi li hoveri */
 #navBar > div > a:hover {
-    background-color: #1ad704;
+    background-color: #53ff53;
 }
 
 /* eccezione per il tasti con l'immagine, a questo non serve il padding */
@@ -155,6 +155,9 @@ body {
 .corpo * {
     flex: 1;
 }
+.corpo p {
+    margin-right: 20px;
+}
 .imgWrap {
     width: 30%;
     flex: unset;
@@ -163,6 +166,9 @@ body {
 .imgWrap img {
     width: 100%;
     height: auto;
+}
+.imgWrap.imgFullWidth {
+    width: 80%;
 }
 
 .downloadButton {
@@ -179,10 +185,12 @@ body {
     height: 40px;
     border-radius: 8px;
     padding: 0 20px;
+
+    transition: background-color 0.25s ease-in-out;
 }
 
 .downloadButton:hover {
-    background: #1ad704;
+    background: #53ff53;
 }
 
 .downloadButton:active {

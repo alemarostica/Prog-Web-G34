@@ -96,9 +96,10 @@ body {
     width: 90%;
     background-color: rgb(191, 209, 245);
     padding: 20px;
-    align-self: flex-start;
     transition: all 0.6s cubic-bezier(0, 0, 0.34, 0.98);
     border-radius: 16px;
+
+    align-self: center;
 }
 .scheda:not(:has(input):has(button)):hover {
     /*width: calc(100% - 20px);*/
@@ -108,10 +109,7 @@ body {
 .scheda p {
     font-size: 20px;
 }
-/* le schede e il loro tiolo vengono staggherate a destra e sinistra alternate */
-.scheda:nth-child(2n) {
-    align-self: flex-end;
-}
+
 .scheda:nth-child(2n):not(:has(input):has(button)):hover {
     transform: translate(-6px, -6px);
     box-shadow: 4px 4px 14px 0px #08112F8C;
@@ -173,6 +171,8 @@ button {
     margin-bottom: 10px;
     background-color: rgb(135, 178, 249);
     font-weight: bold;
+
+    transition: background-color 0.25s ease-in-out;
 }
 
 button:hover {
@@ -198,6 +198,8 @@ input[type=submit] {
     margin-bottom: 10px;
     background-color: rgb(135, 178, 249);
     font-weight: bold;
+
+    transition: background-color 0.25s ease-in-out;
 }
 
 input[type=submit]:hover {
