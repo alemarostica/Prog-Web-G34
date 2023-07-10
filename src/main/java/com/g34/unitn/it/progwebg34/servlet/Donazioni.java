@@ -67,6 +67,6 @@ public class Donazioni extends HttpServletDB {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        response.sendRedirect("areaPrivata");
+        response.sendRedirect(response.encodeRedirectURL("areaPrivata"));
     }
 }
