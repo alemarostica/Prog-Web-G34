@@ -140,6 +140,6 @@ function mostraDonazioni() {
             });
         }
     }
-    xmlhttp.open("GET", `donazioni`, true);
+    xmlhttp.open("GET", `donazioni${sessionId}`, true);
     xmlhttp.send();
 }
