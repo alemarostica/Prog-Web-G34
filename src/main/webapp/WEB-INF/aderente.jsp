@@ -16,7 +16,7 @@
             <div class="scheda centered">
                 <h3 class="titoloPagina">Aiutaci a sostenere le nostre attività!</h3>
                 <div class="form-center">
-                    <form action="<%=response.encodeURL("donazione")%>" method="POST">
+                    <form action="<%=response.encodeURL("donazioni")%>" method="POST">
                         <input type="hidden" name="email" value="<%= user.getEmail() %>">
                         <input type="number" name="donazione" id="donazione" min="1"> €<br/><br/>
                         <div class="buttonContainer"><input type="submit" value="Dona"></div>

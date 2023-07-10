@@ -3,6 +3,10 @@ package com.g34.unitn.it.progwebg34.beans;
 import java.io.Serializable;
 
 public class ErrorBean implements Serializable {
+    /*
+    Questo bean viene utilizzato per comunicare eventuali errori di validazione lato server
+    delle informazioni specificate nel login/signin alla jsp corrispondente
+    */
     private String title;
     private String message;
 

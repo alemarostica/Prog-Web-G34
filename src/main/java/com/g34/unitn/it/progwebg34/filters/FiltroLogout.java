@@ -7,6 +7,9 @@ import java.io.IOException;
 
 @WebFilter(filterName = "FiltroLogout")
 public class FiltroLogout implements Filter {
+    /*
+    Questo filtro si occupa di eliminare la sessione quando l'utente esegue il logout
+    */
     public void init(FilterConfig config) throws ServletException {
     }
 

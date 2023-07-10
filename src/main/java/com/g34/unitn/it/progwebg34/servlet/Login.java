@@ -14,7 +14,7 @@ import java.sql.*;
 public class Login extends HttpServletDB {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        //verifico se l'utente è già loggato oppure no
+        //verifica se l'utente è già loggato oppure no
         if(request.getSession(false) != null && request.getSession(false).getAttribute("user") != null){
             //redirect alla home nel caso l'utente sia già loggato
             response.sendRedirect(response.encodeRedirectURL("index.jsp"));
@@ -32,9 +32,6 @@ public class Login extends HttpServletDB {
         //prelievo dei parametri dal body della richiesta
         String username = request.getParameter("username");
         String password = request.getParameter("password");
-
-
-        //eseguire controlli sui dati anche lato server?
 
         try {
             //preparazione statement

@@ -3,6 +3,10 @@ package com.g34.unitn.it.progwebg34.beans;
 import java.util.Date;
 
 public class UserBean {
+    /*
+    Questo bean viene utilizzato per salvare le informazioni dell'utente loggato
+    nella sessione (viene anche usato nelle jsp per visualizzare i dati dell'utente)
+    */
     private String username;
     private String nome;
     private String cognome;

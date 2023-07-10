@@ -17,11 +17,13 @@ public class AreaPrivata extends HttpServletDB {
         HttpSession sessione = request.getSession();
         UserBean user = (UserBean) (sessione.getAttribute("user"));
 
+        //se nessun utente è loggato, viene reindirizzato alla home page
         if (user==null) {
             response.sendRedirect(response.encodeRedirectURL("index.jsp"));
         }else{
             //0 -> simpatizzante, 1 -> aderente, 2 -> amministratore
             if (user.getTipologia()==0 || user.getTipologia()==1) {
+                //prelievo dal DB delle attività a cui l'utente è già iscritto per inviarle alla jsp con un AttivitaBean
                 String query = "SELECT ATTIVITA FROM ISCRIZIONE WHERE EMAILUTENTE = ?";
                 try{
                     PreparedStatement s = connection.prepareStatement(query);
@@ -35,6 +37,8 @@ public class AreaPrivata extends HttpServletDB {
                     e.printStackTrace();
                 }
             }
+
+            //in base alla tipologia di utente viene eseguito il forward alla jsp corrispondente
             switch (user.getTipologia()) {
                 case 0:
                     ContatoreVisite.incrementa("simpatizzante.jsp");

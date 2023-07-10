@@ -35,7 +35,7 @@ public class FrasiMotivazionali extends HttpServletDB {
         DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
 
         try {
-            // Parsing del XML
+            // Parsing dell'XML
             DocumentBuilder db = dbf.newDocumentBuilder();
             Document doc = db.parse(fileFrasiMotivazionali);
             doc.getDocumentElement().normalize();

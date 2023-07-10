@@ -22,9 +22,9 @@ public class Contatti extends HttpServletDB {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        //ricezione dal form contatti dei dati da utilizzare per l'invio della email
         request.setCharacterEncoding("UTF-8");
 
-        //simulare invio email
         String nome = request.getParameter("nome");
         String cognome = request.getParameter("cognome");
         String email = request.getParameter("email");

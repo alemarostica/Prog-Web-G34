@@ -40,9 +40,6 @@ public class Signin extends HttpServletDB {
         String password = request.getParameter("password");
         String ripetiPassword = request.getParameter("ripetiPassword");
 
-
-        //eseguire controlli sui dati anche lato server?
-
         try {
             //preparazione statement
             String query = "INSERT INTO Iscritto (Username,Password,Nome,Cognome,DataNascita,Email,Telefono,Tipologia) VALUES (?,?,?,?,?,?,?,?)";

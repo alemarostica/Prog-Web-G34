@@ -6,6 +6,10 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class HttpServletDB extends HttpServlet {
+    /*
+    Questa servlet fa da superclasse per tutte le servlet del progetto che hanno necessità
+    di collegarsi al DB (stabilendo la connessione nel metodo init())
+     */
     private final String url = "jdbc:derby://localhost:1527/Tum4WorldDB34";
     Connection connection = null;
 

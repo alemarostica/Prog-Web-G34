@@ -15,12 +15,12 @@ import com.google.gson.JsonArray;
 public class ListaUtenti extends HttpServletDB {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        //verifico se a chiamare l'API è l'admin
+        //verifica se a chiamare l'API è l'admin
         HttpSession sessione = request.getSession();
         UserBean user = (UserBean) (sessione.getAttribute("user"));
 
         if (user != null && user.getTipologia() == 2) {
-            //prelevo dalla richiesta la tipologia di utenti da restituire
+            //prelievo dalla richiesta la tipologia di utenti da restituire
             String tipologia = request.getParameter("tipologia");
 
             //scelta della query in base alla tipologia richiesta

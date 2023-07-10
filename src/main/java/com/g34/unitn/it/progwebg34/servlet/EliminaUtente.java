@@ -13,13 +13,15 @@ public class EliminaUtente extends HttpServletDB {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         UserBean utente = (UserBean) request.getSession().getAttribute("user");
+
+        //se nessun utente è loggato, viene reindirizato alla home page
         if (utente==null) {
             request.getRequestDispatcher(response.encodeRedirectURL("index.jsp?logout=true")).forward(request,response);
             return;
         }
-        String username = utente.getUsername();
 
-        //scelta della query in base alla tipologia richiesta
+        //rimozione dell'utente dal database
+        String username = utente.getUsername();
         String query = "DELETE FROM ISCRITTO WHERE USERNAME = ?";
 
         try {
@@ -29,7 +31,8 @@ public class EliminaUtente extends HttpServletDB {
         }catch (SQLException e) {
             e.printStackTrace();
         }
-        //request.getRequestDispatcher(response.encodeRedirectURL("index.jsp?logout=true")).forward(request,response);
+
+        //redirect alla home page richiedendo il logout
         response.sendRedirect(response.encodeRedirectURL("index.jsp?logout=true"));
     }
 

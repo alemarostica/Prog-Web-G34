@@ -26,7 +26,7 @@ public class Iscrizione extends HttpServletDB {
 
         String mail = user.getEmail();
 
-        // Crea la tua query di inserimento utilizzando i valori selezionati
+        //creazione della query con i valori ricevuti dal form di iscrizione alle attività
         String query = "INSERT INTO ISCRIZIONE (EMAILUTENTE, ATTIVITA, DATA) VALUES (?, ?, ?)";
         try {
             PreparedStatement ps = connection.prepareStatement(query);

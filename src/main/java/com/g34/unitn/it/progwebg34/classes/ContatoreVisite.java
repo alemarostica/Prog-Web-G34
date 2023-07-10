@@ -5,6 +5,10 @@ import java.util.Map;
 import java.util.Set;
 
 public class ContatoreVisite {
+    /*
+    Questa classe si occupa di mantenere una mappa che conta le visite fatte al sito
+    divise per ogni pagina (l'incremento dei contatori delle jsp viene svolto da un filtro).
+    */
     private static Map<String,Integer> contatori = new HashMap<>();
 
     public synchronized static void incrementa(String pagina) {
