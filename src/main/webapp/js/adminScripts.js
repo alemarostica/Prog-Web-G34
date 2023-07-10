@@ -27,7 +27,7 @@ function elencaUtenti() {
             stampaUtenti("listaUtenti", data);
         }
     }
-    xmlhttp.open("GET", `listaUtenti`, true);
+    xmlhttp.open("GET", `listaUtenti${sessionId}`, true);
     xmlhttp.send();
 }
 
@@ -39,7 +39,7 @@ function elencaSimpatizzanti() {
             stampaUtenti("listaSimpatizzanti", data);
         }
     }
-    xmlhttp.open("GET", `listaUtenti?tipologia=simpatizzanti`, true);
+    xmlhttp.open("GET", `listaUtenti${sessionId}?tipologia=simpatizzanti`, true);
     xmlhttp.send();
 }
 
@@ -51,7 +51,7 @@ function elencaAderenti() {
             stampaUtenti("listaAderenti", data);
         }
     }
-    xmlhttp.open("GET", `listaUtenti?tipologia=aderenti`, true);
+    xmlhttp.open("GET", `listaUtenti${sessionId}?tipologia=aderenti`, true);
     xmlhttp.send();
 }
 
@@ -91,13 +91,13 @@ function mostraVisite() {
             });
         }
     }
-    xmlhttp.open("GET", `visitePagine`, true);
+    xmlhttp.open("GET", `visitePagine${sessionId}`, true);
     xmlhttp.send();
 }
 
 function resetVisite() {
     const xmlhttp = new XMLHttpRequest();
-    xmlhttp.open("POST", `visitePagine`, true);
+    xmlhttp.open("POST", `visitePagine${sessionId}`, true);
     xmlhttp.send();
 }
 

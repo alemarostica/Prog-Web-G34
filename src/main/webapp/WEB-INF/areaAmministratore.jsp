@@ -3,6 +3,15 @@
 <html>
 
     <head>
+        <script src="js/sessionId.js"></script>
+        <%
+            if (request.isRequestedSessionIdFromURL()) {
+        %>
+        <script>
+            setSessionId("<%=request.getSession().getId()%>");
+        </script>
+        <%}%>
+
         <%@ include file="componenti/head.html"%>
         <link rel="stylesheet" type="text/css" href="css/admin.css"/>
         <link rel="stylesheet" type="text/css" href="css/table.css"/>
